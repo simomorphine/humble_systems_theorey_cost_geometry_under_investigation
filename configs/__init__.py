@@ -1,10 +1,9 @@
-from .config import CartpoleConfig, PendulumConfig, LunarLanderConfig, TetrisConfig
+from .config import CartpoleConfig, PendulumConfig, LunarLanderConfig
 
 CONFIGS_REGISTRY = {
     "cartpole":    CartpoleConfig,
     "pendulum":    PendulumConfig,
     "lunarlander": LunarLanderConfig,
-    "tetris":      TetrisConfig,
 }
 
-__all__ = ["CartpoleConfig", "PendulumConfig", "LunarLanderConfig", "TetrisConfig"]
+__all__ = ["CartpoleConfig", "PendulumConfig", "LunarLanderConfig"]

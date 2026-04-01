@@ -20,7 +20,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 def main():
     parser = argparse.ArgumentParser(description="Run RL experiments")
     parser.add_argument("--env", type=str, required=True, 
-                       choices=["cartpole", "lunarlander", "pendulum", "tetris"],
+                       choices=["cartpole", "lunarlander", "pendulum"],
                        help="Environment to run")
     parser.add_argument("--agent", type=str, default="complex",
                        choices=["complex", "standard"],  # Add more if available

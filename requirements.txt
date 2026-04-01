@@ -6,6 +6,3 @@ flask-socketio
 swig
 gymnasium[box2d]
 
-# Tetris environment
-gym-tetris==3.0.4
-nes-py>=8.1.4
