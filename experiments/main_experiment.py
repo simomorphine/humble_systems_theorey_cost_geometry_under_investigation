@@ -41,6 +41,7 @@ def main():
     print("\nEvaluating...")
     eval_result = evaluate(env, agent, cfg)
     print(f"Mean reward : {eval_result.mean_reward:.2f} ± {eval_result.std_reward:.2f}")
+    print(f"Success rate: {eval_result.success_rate:.1%} (threshold: {cfg.SUCCESS_THRESHOLD})")
 
     env.close()
 
