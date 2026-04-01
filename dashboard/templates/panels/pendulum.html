@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block env_panel %}
+<table class="state-table">
+  <tr><td>angle (rad)</td>    <td id="v-angle">—</td></tr>
+  <tr><td>angular vel</td>    <td id="v-angvel">—</td></tr>
+  <tr><td>cos θ</td>          <td id="v-cos">—</td></tr>
+  <tr><td>sin θ</td>          <td id="v-sin">—</td></tr>
+  <tr><td>cost</td>           <td id="v-cost">—</td></tr>
+  <tr><td>debt</td>           <td id="v-debt">—</td></tr>
+  <tr><td>|z|</td>            <td id="v-mod">—</td></tr>
+</table>
+
+<!-- Pendulum SVG visualisation -->
+<svg viewBox="-1 -1.1 2 2.1" style="width:100%;margin-top:1.25rem;background:#0f1117;border-radius:6px">
+  <!-- pivot -->
+  <circle cx="0" cy="0" r="0.06" fill="#4a5568"/>
+  <!-- rod -->
+  <line id="pd-rod" x1="0" y1="0" x2="0" y2="0.85"
+        stroke="#76e4f7" stroke-width="0.06" stroke-linecap="round"/>
+  <!-- bob -->
+  <circle id="pd-bob" cx="0" cy="0.85" r="0.12" fill="#4299e1" stroke="#90cdf4" stroke-width="0.025"/>
+  <!-- upright target marker -->
+  <line x1="0" y1="0" x2="0" y2="-0.95" stroke="#2d3748" stroke-width="0.02" stroke-dasharray="0.06 0.06"/>
+</svg>
+{% endblock %}
+
+{% block panel_script %}
+socket.on('env', data => {
+  if (data.env_name !== 'Pendulum-v1') return;
+  const p  = data.panel;
+  const si = data.state_info;
+
+  // Table
+  document.getElementById('v-angle').textContent  = si['angle (rad)'].toFixed(3);
+  document.getElementById('v-angvel').textContent = si.angular_velocity.toFixed(3);
+  document.getElementById('v-cos').textContent    = si['cos(theta)'].toFixed(3);
+  document.getElementById('v-sin').textContent    = si['sin(theta)'].toFixed(3);
+  document.getElementById('v-cost').textContent   = data.cost.toFixed(4);
+  document.getElementById('v-debt').textContent   = data.debt.toFixed(4);
+  document.getElementById('v-mod').textContent    = data.modulus.toFixed(4);
+
+  // SVG — rod & bob
+  const L    = 0.85;
+  const sinA = p.sin_theta;
+  const cosA = p.cos_theta;
+  const x2   = L * sinA;
+  const y2   = L * cosA;   // positive = downward in SVG
+  document.getElementById('pd-rod').setAttribute('x2', x2);
+  document.getElementById('pd-rod').setAttribute('y2', y2);
+  document.getElementById('pd-bob').setAttribute('cx', x2);
+  document.getElementById('pd-bob').setAttribute('cy', y2);
+
+  // Bob colour: red when far from upright, green near upright
+  const debt = data.debt;
+  const g    = Math.max(0, Math.min(255, Math.round(255 * (1 - debt / 3))));
+  const r    = Math.max(0, Math.min(255, Math.round(255 * (debt / 3))));
+  document.getElementById('pd-bob').setAttribute('fill', `rgb(${r},${g},120)`);
+});
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block env_panel %}
+<!-- State info table -->
+<table class="state-table" id="state-table">
+  <tr><td>cart position</td><td id="v-cart-pos">—</td></tr>
+  <tr><td>cart velocity</td><td id="v-cart-vel">—</td></tr>
+  <tr><td>pole angle</td>   <td id="v-pole-ang">—</td></tr>
+  <tr><td>pole ang vel</td> <td id="v-pole-vel">—</td></tr>
+  <tr><td>step reward</td>  <td id="v-reward">—</td></tr>
+  <tr><td>cost</td>         <td id="v-cost">—</td></tr>
+  <tr><td>debt</td>         <td id="v-debt">—</td></tr>
+  <tr><td>|z|</td>          <td id="v-mod">—</td></tr>
+</table>
+
+<!-- CartPole SVG visualisation -->
+<svg id="cp-svg" viewBox="-2.5 -1 5 2" style="width:100%;margin-top:1.25rem;background:#0f1117;border-radius:6px">
+  <!-- track -->
+  <line x1="-2.4" y1="0.55" x2="2.4" y2="0.55" stroke="#4a5568" stroke-width="0.04"/>
+  <!-- cart -->
+  <rect id="cp-cart" x="-0.25" y="0.3" width="0.5" height="0.25"
+        rx="0.04" fill="#4299e1" stroke="#90cdf4" stroke-width="0.02"/>
+  <!-- pole -->
+  <line id="cp-pole" x1="0" y1="0.425" x2="0" y2="-0.575"
+        stroke="#fc8181" stroke-width="0.05" stroke-linecap="round"/>
+  <!-- pivot -->
+  <circle id="cp-pivot" cx="0" cy="0.425" r="0.05" fill="#f6e05e"/>
+</svg>
+{% endblock %}
+
+{% block panel_script %}
+socket.on('env', data => {
+  if (data.env_name !== 'CartPole-v1') return;
+  const p = data.panel;
+  const si = data.state_info;
+
+  // Table
+  document.getElementById('v-cart-pos').textContent = si.cart_position.toFixed(3);
+  document.getElementById('v-cart-vel').textContent = si.cart_velocity.toFixed(3);
+  document.getElementById('v-pole-ang').textContent = si.pole_angle.toFixed(3);
+  document.getElementById('v-pole-vel').textContent = si.pole_angular_velocity.toFixed(3);
+  document.getElementById('v-reward').textContent   = data.reward.toFixed(3);
+  document.getElementById('v-cost').textContent     = data.cost.toFixed(4);
+  document.getElementById('v-debt').textContent     = data.debt.toFixed(4);
+  document.getElementById('v-mod').textContent      = data.modulus.toFixed(4);
+
+  // SVG — cart
+  const cartX = Math.max(-2.0, Math.min(2.0, p.cart_position));
+  document.getElementById('cp-cart').setAttribute('x', cartX - 0.25);
+  document.getElementById('cp-pivot').setAttribute('cx', cartX);
+
+  // SVG — pole (angle in radians from vertical)
+  const poleLen = 1.0;
+  const angle   = p.pole_angle;
+  const x2 = cartX + poleLen * Math.sin(angle);
+  const y2 = 0.425 - poleLen * Math.cos(angle);
+  document.getElementById('cp-pole').setAttribute('x1', cartX);
+  document.getElementById('cp-pole').setAttribute('x2', x2);
+  document.getElementById('cp-pole').setAttribute('y2', y2);
+});
+{% endblock %}

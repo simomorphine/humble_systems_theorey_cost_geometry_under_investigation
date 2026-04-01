@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>HST RL Dashboard — {{ env_name }}</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, sans-serif; background: #0f1117; color: #e2e8f0; }
+
+    header {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #2d3748;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    header h1 { font-size: 1.1rem; font-weight: 500; }
+    .badge {
+      font-size: 0.75rem; padding: 2px 10px;
+      border-radius: 999px; background: #2d3748; color: #90cdf4;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      height: calc(100vh - 57px);
+    }
+
+    /* ── Left column: env panel (env-specific) ── */
+    .env-panel {
+      background: #1a1d27;
+      border: 1px solid #2d3748;
+      border-radius: 10px;
+      padding: 1.25rem;
+      overflow: auto;
+    }
+    .panel-title {
+      font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: .08em; color: #718096; margin-bottom: 1rem;
+    }
+
+    /* ── Right column: universal charts grid ── */
+    .charts {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 1rem;
+      overflow: auto;
+    }
+    .chart-card {
+      background: #1a1d27;
+      border: 1px solid #2d3748;
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex; flex-direction: column;
+    }
+    .chart-card h2 {
+      font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: .08em; color: #718096; margin-bottom: .5rem;
+    }
+    .chart-card canvas { flex: 1; min-height: 0; }
+
+    /* State info table */
+    .state-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+    .state-table td { padding: 4px 6px; border-bottom: 1px solid #2d3748; }
+    .state-table td:first-child { color: #718096; }
+    .state-table td:last-child  { text-align: right; font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>HST RL Lab</h1>
+  <span class="badge">{{ env_name }}</span>
+  <span class="badge" id="agent-badge">—</span>
+  <span class="badge" id="ep-badge">ep 0</span>
+</header>
+
+<div class="layout">
+
+  <!-- LEFT: env-specific panel (filled by child templates) -->
+  <div class="env-panel">
+    <p class="panel-title">environment</p>
+    {% block env_panel %}{% endblock %}
+  </div>
+
+  <!-- RIGHT: universal charts -->
+  <div class="charts">
+    <div class="chart-card"><h2>Episode reward</h2><canvas id="c-reward"></canvas></div>
+    <div class="chart-card"><h2>Cost  Re(z)</h2>  <canvas id="c-cost"></canvas></div>
+    <div class="chart-card"><h2>Debt  Im(z)</h2>  <canvas id="c-debt"></canvas></div>
+    <div class="chart-card"><h2>|z| = √(cost²+debt²)</h2><canvas id="c-modulus"></canvas></div>
+    <div class="chart-card"><h2>Epsilon ε</h2>    <canvas id="c-epsilon"></canvas></div>
+    <div class="chart-card"><h2>Loss</h2>         <canvas id="c-loss"></canvas></div>
+  </div>
+</div>
+
+<script>
+// ── Chart factory ──────────────────────────────────────────────────────────
+function makeChart(id, label, color) {
+  return new Chart(document.getElementById(id), {
+    type: 'line',
+    data: {
+      labels: [],
+      datasets: [{ label, data: [], borderColor: color,
+        borderWidth: 1.5, pointRadius: 0, tension: 0.3, fill: false }]
+    },
+    options: {
+      animation: false,
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { display: false },
+        y: { ticks: { color: '#718096', font: { size: 10 } },
+             grid: { color: '#2d3748' } }
+      }
+    }
+  });
+}
+
+const MAX_POINTS = 300;
+function push(chart, value) {
+  chart.data.labels.push('');
+  chart.data.datasets[0].data.push(value);
+  if (chart.data.labels.length > MAX_POINTS) {
+    chart.data.labels.shift();
+    chart.data.datasets[0].data.shift();
+  }
+  chart.update('none');
+}
+
+const charts = {
+  reward:  makeChart('c-reward',  'Reward',  '#68d391'),
+  cost:    makeChart('c-cost',    'Cost',    '#fc8181'),
+  debt:    makeChart('c-debt',    'Debt',    '#76e4f7'),
+  modulus: makeChart('c-modulus', '|z|',     '#b794f4'),
+  epsilon: makeChart('c-epsilon', 'Epsilon', '#f6ad55'),
+  loss:    makeChart('c-loss',    'Loss',    '#f687b3'),
+};
+
+// ── SocketIO ───────────────────────────────────────────────────────────────
+const socket = io();
+
+socket.on('episode', data => {
+  push(charts.reward,  data.total_reward);
+  push(charts.cost,    data.total_cost);
+  push(charts.debt,    data.total_debt);
+  push(charts.modulus, data.mean_modulus);
+  document.getElementById('ep-badge').textContent = 'ep ' + data.episode;
+});
+
+socket.on('agent', data => {
+  if (data.epsilon != null) push(charts.epsilon, data.epsilon);
+  if (data.loss    != null) push(charts.loss,    data.loss);
+  document.getElementById('agent-badge').textContent = data.agent_name;
+});
+
+// env-specific panel updates handled by child template
+{% block panel_script %}{% endblock %}
+</script>
+
+</body>
+</html>

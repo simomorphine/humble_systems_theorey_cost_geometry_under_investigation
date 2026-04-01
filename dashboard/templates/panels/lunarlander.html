@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block env_panel %}
+<table class="state-table">
+  <tr><td>x position</td>    <td id="v-x">—</td></tr>
+  <tr><td>y position</td>    <td id="v-y">—</td></tr>
+  <tr><td>x velocity</td>    <td id="v-vx">—</td></tr>
+  <tr><td>y velocity</td>    <td id="v-vy">—</td></tr>
+  <tr><td>angle</td>         <td id="v-angle">—</td></tr>
+  <tr><td>ang velocity</td>  <td id="v-angvel">—</td></tr>
+  <tr><td>left leg</td>      <td id="v-ll">—</td></tr>
+  <tr><td>right leg</td>     <td id="v-rl">—</td></tr>
+  <tr><td>cost</td>          <td id="v-cost">—</td></tr>
+  <tr><td>debt</td>          <td id="v-debt">—</td></tr>
+  <tr><td>|z|</td>           <td id="v-mod">—</td></tr>
+</table>
+
+<!-- LunarLander SVG visualisation -->
+<svg id="ll-svg" viewBox="-1.5 -1.2 3 2.2" style="width:100%;margin-top:1.25rem;background:#0f1117;border-radius:6px">
+  <!-- ground -->
+  <line x1="-1.5" y1="0.9" x2="1.5" y2="0.9" stroke="#4a5568" stroke-width="0.04"/>
+  <!-- landing pad -->
+  <rect x="-0.25" y="0.86" width="0.5" height="0.06" rx="0.02" fill="#f6e05e" opacity="0.7"/>
+
+  <!-- lander body (transformed via JS) -->
+  <g id="ll-lander" transform="translate(0,0) rotate(0)">
+    <!-- body -->
+    <rect x="-0.18" y="-0.18" width="0.36" height="0.3" rx="0.06" fill="#4299e1" stroke="#90cdf4" stroke-width="0.02"/>
+    <!-- left leg -->
+    <line id="ll-left-leg"  x1="-0.18" y1="0.1"  x2="-0.28" y2="0.28" stroke="#718096" stroke-width="0.03" stroke-linecap="round"/>
+    <!-- right leg -->
+    <line id="ll-right-leg" x1="0.18"  y1="0.1"  x2="0.28"  y2="0.28" stroke="#718096" stroke-width="0.03" stroke-linecap="round"/>
+    <!-- flame (main engine) -->
+    <polygon id="ll-flame" points="0,-0.18 -0.08,-0.36 0,-0.32 0.08,-0.36"
+             fill="#f6ad55" opacity="0" transform="rotate(180)"/>
+  </g>
+</svg>
+{% endblock %}
+
+{% block panel_script %}
+socket.on('env', data => {
+  if (data.env_name !== 'LunarLander-v3') return;
+  const p  = data.panel;
+  const si = data.state_info;
+
+  // Table
+  document.getElementById('v-x').textContent      = si.x_position.toFixed(3);
+  document.getElementById('v-y').textContent      = si.y_position.toFixed(3);
+  document.getElementById('v-vx').textContent     = si.x_velocity.toFixed(3);
+  document.getElementById('v-vy').textContent     = si.y_velocity.toFixed(3);
+  document.getElementById('v-angle').textContent  = si.angle.toFixed(3);
+  document.getElementById('v-angvel').textContent = si.angular_velocity.toFixed(3);
+  document.getElementById('v-ll').textContent     = p.left_leg  ? '✓' : '—';
+  document.getElementById('v-rl').textContent     = p.right_leg ? '✓' : '—';
+  document.getElementById('v-cost').textContent   = data.cost.toFixed(4);
+  document.getElementById('v-debt').textContent   = data.debt.toFixed(4);
+  document.getElementById('v-mod').textContent    = data.modulus.toFixed(4);
+
+  // SVG — lander position + rotation
+  const svgX  = Math.max(-1.2, Math.min(1.2, p.x));
+  const svgY  = Math.max(-1.0, Math.min(0.8, -p.y + 0.5));
+  const deg   = (p.angle * 180 / Math.PI);
+  document.getElementById('ll-lander')
+    .setAttribute('transform', `translate(${svgX},${svgY}) rotate(${deg})`);
+
+  // Leg contact colours
+  document.getElementById('ll-left-leg').setAttribute( 'stroke', p.left_leg  ? '#68d391' : '#718096');
+  document.getElementById('ll-right-leg').setAttribute('stroke', p.right_leg ? '#68d391' : '#718096');
+
+  // Main engine flame (action 2)
+  document.getElementById('ll-flame').style.opacity = (data.action === 2) ? '0.9' : '0';
+});
+{% endblock %}
