@@ -59,6 +59,28 @@ class LunarLanderConfig:
     N_EPISODES      = 1000
     MAX_STEPS       = 1000
     GAMMA           = 0.99
+
+
+class TetrisConfig:
+    ENV_NAME        = "TetrisA-v0"
+    N_STATES        = 2   # filled_ratio + line_value
+    N_ACTIONS       = 6   # discrete moves in gym-tetris
+    N_EPISODES      = 500
+    MAX_STEPS       = 2000
+    GAMMA           = 0.99
+    LR              = 1e-3
+    BATCH_SIZE      = 64
+    REPLAY_CAPACITY = 100_000
+    TARGET_UPDATE   = 10
+    HIDDEN_DIM      = 256
+    EPS_START       = 1.0
+    EPS_END         = 0.05
+    EPS_DECAY       = 0.995
+    EVAL_EVERY      = 20
+    EVAL_EPISODES   = 5
+    N_SEEDS         = 3
+    SMOOTH_W        = 20
+    SUCCESS_THRESHOLD = 1000.0
     LR              = 1e-3
     BATCH_SIZE      = 64
     REPLAY_CAPACITY = 100_000

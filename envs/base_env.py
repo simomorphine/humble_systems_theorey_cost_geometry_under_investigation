@@ -28,12 +28,25 @@ class BaseEnvironment(ABC):
     # ── Lifecycle ──────────────────────────────────────────────────────────────
 
     def reset(self, seed: Optional[int] = None) -> Tuple[np.ndarray, Dict]:
-        obs, info = self.env.reset(seed=seed)
+        result = self.env.reset(seed=seed)
+        if isinstance(result, tuple) and len(result) == 2:
+            obs, info = result
+        else:
+            obs = result
+            info = {}
         self.current_step = 0
         return obs, info
 
     def step(self, action) -> Tuple[np.ndarray, float, bool, bool, Dict]:
-        obs, reward, terminated, truncated, info = self.env.step(action)
+        result = self.env.step(action)
+        if isinstance(result, tuple) and len(result) == 5:
+            obs, reward, terminated, truncated, info = result
+        elif isinstance(result, tuple) and len(result) == 4:
+            obs, reward, done, info = result
+            terminated = done
+            truncated = False
+        else:
+            raise ValueError(f"Unsupported env.step() output: {result}")
         self.current_step += 1
         return obs, reward, terminated, truncated, info
 
