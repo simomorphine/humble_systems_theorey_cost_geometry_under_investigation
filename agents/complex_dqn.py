@@ -28,7 +28,7 @@ class ComplexDQNAgent(BaseAgent):
         super().__init__(cfg, device)
         self.name = "Complex DQN"
 
-        self.q_net  = ComplexQNet(cfg.N_STATES, cfg.N_ACTIONS, cfg.HIDDEN_DIM).to(device)
+        self.q_net  = ComplexQNet(cfg.N_STATES, cfg.N_ACTIONS, cfg.HIDDEN_DIM, cfg.HIDDEN2_DIM).to(device)
         self.q_targ = copy.deepcopy(self.q_net).to(device)
         self.q_targ.eval()
 

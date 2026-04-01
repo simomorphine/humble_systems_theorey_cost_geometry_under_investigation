@@ -16,6 +16,7 @@ class CartpoleConfig:
     REPLAY_CAPACITY = 50_000
     TARGET_UPDATE   = 10
     HIDDEN_DIM      = 128
+    HIDDEN2_DIM     = 64
     EPS_START       = 1.0
     EPS_END         = 0.02
     EPS_DECAY       = 0.995
@@ -40,6 +41,7 @@ class PendulumConfig:
     REPLAY_CAPACITY = 100_000
     TARGET_UPDATE   = 20
     HIDDEN_DIM      = 256
+    HIDDEN2_DIM     = 128
     EPS_START       = 1.0
     EPS_END         = 0.02
     EPS_DECAY       = 0.997
@@ -59,3 +61,17 @@ class LunarLanderConfig:
     N_EPISODES      = 1000
     MAX_STEPS       = 1000
     GAMMA           = 0.99
+    LR              = 1e-3
+    BATCH_SIZE      = 64
+    REPLAY_CAPACITY = 100_000
+    TARGET_UPDATE   = 10
+    HIDDEN_DIM      = 128
+    HIDDEN2_DIM     = 128
+    EPS_START       = 1.0
+    EPS_END         = 0.02
+    EPS_DECAY       = 0.995
+    EVAL_EVERY      = 50
+    EVAL_EPISODES   = 10
+    N_SEEDS         = 3
+    SMOOTH_W        = 20
+    SUCCESS_THRESHOLD = 200.0

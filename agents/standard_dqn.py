@@ -25,7 +25,7 @@ class StandardDQNAgent(BaseAgent):
         super().__init__(cfg, device)
         self.name = "Standard DQN"
 
-        self.q_net  = StandardQNet(cfg.N_STATES, cfg.N_ACTIONS, cfg.HIDDEN_DIM).to(device)
+        self.q_net  = StandardQNet(cfg.N_STATES, cfg.N_ACTIONS, cfg.HIDDEN_DIM, cfg.HIDDEN2_DIM).to(device)
         self.q_targ = copy.deepcopy(self.q_net).to(device)
         self.q_targ.eval()
 

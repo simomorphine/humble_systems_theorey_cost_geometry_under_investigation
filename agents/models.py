@@ -15,14 +15,16 @@ class StandardQNet(nn.Module):
     def __init__(self,
                  n_states:  int,
                  n_actions: int,
-                 hidden:    int):
+                 hidden:    int,
+                 hidden2:   int = None):
         super().__init__()
+        hidden2 = hidden2 or hidden
         self.net = nn.Sequential(
             nn.Linear(n_states, hidden),
             nn.ReLU(),
-            nn.Linear(hidden, hidden),
+            nn.Linear(hidden, hidden2),
             nn.ReLU(),
-            nn.Linear(hidden, n_actions),
+            nn.Linear(hidden2, n_actions),
         )
  
     def forward(self, x: torch.Tensor) -> torch.Tensor:
@@ -42,22 +44,24 @@ class ComplexQNet(nn.Module):
     def __init__(self,
                  n_states:  int,
                  n_actions: int,
-                 hidden:    int):
+                 hidden:    int,
+                 hidden2:   int = None):
         super().__init__()
+        hidden2 = hidden2 or hidden
  
         # Shared feature extractor
         self.encoder = nn.Sequential(
             nn.Linear(n_states, hidden),
             nn.ReLU(),
-            nn.Linear(hidden, hidden),
+            nn.Linear(hidden, hidden2),
             nn.ReLU(),
         )
  
         # Re-head: Re(Q(s,·)) ∈ ℝ^{N_ACTIONS}  — cost axis
-        self.re_head = nn.Linear(hidden, n_actions)
+        self.re_head = nn.Linear(hidden2, n_actions)
  
         # Im-head: Im(Q(s,·)) ∈ ℝ^{N_ACTIONS}  — debt axis
-        self.im_head = nn.Linear(hidden, n_actions)
+        self.im_head = nn.Linear(hidden2, n_actions)
  
     def forward(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
         """
