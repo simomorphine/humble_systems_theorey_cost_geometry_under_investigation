@@ -52,6 +52,7 @@ def run_episode(
     episode:  int  = 0,
     training: bool = True,
     render:   bool = False,
+    collector = None,
 ) -> EpisodeResult:
     """Run one episode. Returns a clean EpisodeResult."""
 
@@ -69,7 +70,7 @@ def run_episode(
         next_state, reward, terminated, truncated, _ = env.step(action)
         done                                     = terminated or truncated
 
-        cost, debt = env.compute_utility(state, next_state, action)
+        cost, debt = env.compute_utility(state, next_state, action, done)
 
         if training:
             agent.push(state, action, reward, cost, debt, next_state, done)
@@ -81,6 +82,14 @@ def run_episode(
         total_cost   += cost
         total_debt   += debt
         moduli.append(np.sqrt(cost**2 + debt**2))
+
+        if collector:
+            state_info = env.get_state_info(state)
+            panel = env.get_dashboard_panel(state)
+            collector.record_step(
+                env.env_name, state_info, panel, action, reward, cost, debt,
+                total_reward, env.current_step, terminated, truncated
+            )
 
         state = next_state
         if done:
@@ -103,13 +112,20 @@ def run_episode(
     )
 
 
-def train(env, agent, cfg, verbose: bool = True) -> List[EpisodeResult]:
+def train(env, agent, cfg, verbose: bool = True, collector=None) -> List[EpisodeResult]:
     """Full training loop. Returns all episode results."""
     results: List[EpisodeResult] = []
 
     for episode in range(cfg.N_EPISODES):
-        result = run_episode(env, agent, cfg, episode=episode, training=True)
+        result = run_episode(env, agent, cfg, episode=episode, training=True, collector=collector)
         results.append(result)
+
+        if collector:
+            collector.record_agent(agent.name, result.epsilon, result.steps, getattr(agent.optimizer.param_groups[0], 'lr', None) if hasattr(agent, 'optimizer') else None, result.loss)
+            collector.record_episode(
+                result.total_reward, result.total_cost, result.total_debt,
+                result.mean_modulus, result.steps, cfg.SUCCESS_THRESHOLD
+            )
 
         # Target network sync
         if episode % cfg.TARGET_UPDATE == 0:

@@ -62,7 +62,8 @@ class BaseEnvironment(ABC):
         self,
         obs:      np.ndarray,
         next_obs: np.ndarray,
-        action:   Any,
+        action:   any,
+        done:     bool
     ) -> Tuple[float, float]:
         """
         HST utility for this transition.

@@ -24,25 +24,67 @@ class CartPoleEnvironment(BaseEnvironment):
 
     # ── HST utility ────────────────────────────────────────────────────────────
 
-    def compute_utility(
-        self,
-        obs:      np.ndarray,
-        next_obs: np.ndarray,
-        action:   int,
-    ) -> Tuple[float, float]:
+    def compute_utility(self,
+                    state: np.ndarray,
+                    next_state: np.ndarray,
+                    action: any,
+                    done: bool) -> tuple[float, float]:
         """
-        Cost  — control effort: |Δcart_velocity|
-        Debt  — imbalance at next_obs: pole angle + ang_vel + cart displacement
-                Spiked to 10.0 if pole has fallen (episode end with no reward)
+            Compute complex utility components for CartPole.
+ 
+            Args:
+                state      : current state  [x, ẋ, θ, θ̇]
+                next_state : next state     [x, ẋ, θ, θ̇]
+                reward     : gym reward (unused — kept for API symmetry with Standard DQN)
+                done       : episode terminated (pole fell or cart out of bounds)
+        
+            Returns:
+                cost (float) : real part      c  ≥ 0, physics-based deviation cost
+                debt (float) : imaginary part d  = H(s') - H(s)
+        
+            Cost formula (physics-based, replaces naive c = -reward):
+                THETA_FAIL = 0.2094 rad (12°)   X_FAIL = 2.4 m
+                c = (θ' / THETA_FAIL)² + 0.1·(x' / X_FAIL)² + 10·1[done]
+        
+                Rationale: CartPole reward ≡ 1 every step, so c = -reward = -1
+                always.  Re(G) = -Σγᵏ then grows more negative with episode
+                length → |Re(G)| is LARGER for longer episodes → agent learns
+                to die immediately (minimising |G| by minimising T).  The
+                physics-based cost avoids this: c≈0 when pole is upright,
+                c→1 near failure angle, +10 on terminal.  Surviving balanced
+                accumulates near-zero cost → small Re(G) → small |G| ✓
+        
+            Entropy proxy:
+                H(s) = -|θ + θ̇|
+                θ  = state[2]  (pole angle, radians)
+                θ̇ = state[3]  (pole angular velocity, rad/s)
+        
+            Interpretation:
+                - cost ≈ 0  when pole is perfectly upright (θ'≈0, x'≈0)
+                - cost large near failure boundary or on terminal step
+                - debt > 0  when |θ+θ̇| decreased  (pole stabilised — good)
+                - debt < 0  when |θ+θ̇| increased  (pole destabilised — bad)
+                - At perfect balance: cost≈0, debt≈0, |z|≈0  ← ideal
+                - |z| = √(cost² + debt²)  is what complex Q-learning minimises
         """
-        cost = abs(float(next_obs[1]) - float(obs[1]))
-
-        pole_angle   = abs(float(next_obs[2]))
-        pole_ang_vel = abs(float(next_obs[3]))
-        cart_pos     = abs(float(next_obs[0]))
-        debt = pole_angle + 0.5 * pole_ang_vel + 0.1 * cart_pos
-
-        return cost, debt
+        # ── Physics-based cost ────────────────────────────────────────────
+        THETA_FAIL      = 0.2094   # 12 degrees in radians (CartPole failure)
+        X_FAIL          = 2.4      # metres (CartPole failure)
+        TERMINAL_PENALTY = 10.0   # large spike on pole falling / cart leaving
+    
+        theta_next = next_state[2]
+        x_next     = next_state[0]
+    
+        c_angle = (theta_next / THETA_FAIL) ** 2          # 0=vertical  1=at limit
+        c_cart  = (x_next     / X_FAIL)     ** 2          # 0=centre    1=at edge
+        cost    = c_angle + 0.1 * c_cart + (TERMINAL_PENALTY if done else 0.0)
+    
+        # ── Information debt  d = H(s') - H(s) ───────────────────────────
+        H_s  = -abs(state[2]      + state[3])       # -|θ + θ̇|
+        H_sp = -abs(next_state[2] + next_state[3])  # -|θ' + θ̇'|
+        debt = float(H_sp - H_s)  # >0 pole stabilised  <0 pole destabilised
+    
+        return float(cost), debt
 
     # ── Dashboard panel ────────────────────────────────────────────────────────
 

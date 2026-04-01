@@ -1,12 +1,13 @@
 """
-LunarLander experiment.
+Pendulum experiment.
+This script is the ONLY place where config, env, agent, and runner meet.
 """
 
 import sys, os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import torch
-from configs.config  import LunarLanderConfig
+from configs.config  import PendulumConfig
 from envs            import ENV_REGISTRY
 from agents          import AGENT_REGISTRY
 from training.runner import train, evaluate
@@ -15,14 +16,11 @@ from dashboard.data_collector import get_data_collector
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-cfg   = LunarLanderConfig()
-env   = ENV_REGISTRY[cfg.ENV_NAME](
-    fuel_weight=cfg.FUEL_WEIGHT,
-    kinematic_weight=cfg.KINEMATIC_WEIGHT,
-)
+cfg   = PendulumConfig()
+env   = ENV_REGISTRY[cfg.ENV_NAME]()
 agent = AGENT_REGISTRY["complex"](cfg, DEVICE)
 
-start_dashboard()
+start_dashboard()   # opens http://127.0.0.1:5000
 
 collector = get_data_collector()
 
@@ -32,6 +30,5 @@ results = train(env, agent, cfg, collector=collector)
 print("\nEvaluating...")
 eval_result = evaluate(env, agent, cfg)
 print(f"Mean reward : {eval_result.mean_reward:.2f} ± {eval_result.std_reward:.2f}")
-print(f"Success rate: {eval_result.success_rate:.1%}")
 
 env.close()

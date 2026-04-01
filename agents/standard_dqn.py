@@ -14,7 +14,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from models.standard_qnet import StandardQNet
+from .models import StandardQNet
 from .base_agent import BaseAgent
 from .replay_buffer import ReplayBuffer, Transition
 

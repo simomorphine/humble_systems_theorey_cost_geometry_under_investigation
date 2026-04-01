@@ -46,7 +46,8 @@ class LunarLanderEnvironment(BaseEnvironment):
         self,
         obs:      np.ndarray,
         next_obs: np.ndarray,
-        action:   int,
+        action:   any,
+        done:     bool,
     ) -> Tuple[float, float]:
         """
         Cost  — fuel burned + kinematic jolt (|Δvx| + |Δvy|)

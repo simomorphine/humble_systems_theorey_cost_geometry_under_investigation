@@ -1,0 +1,7 @@
+torch
+numpy
+gymnasium
+flask
+flask-socketio
+swig
+gymnasium[box2d]

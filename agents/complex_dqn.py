@@ -17,7 +17,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 
-from models.complex_qnet import ComplexQNet
+from .models import ComplexQNet
 from .base_agent import BaseAgent
 from .replay_buffer import ReplayBuffer, Transition
 
