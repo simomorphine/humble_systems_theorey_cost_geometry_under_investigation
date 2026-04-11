@@ -197,7 +197,13 @@ An agent faces an environment with unknown parameters $\theta \in \Theta$. At ea
  
 **Level 1 — Action selection.**
  
-$$A = \begin{cases} \text{exploit} & \text{with probability } \alpha \\ \text{explore} & \text{with probability } 1 - \alpha \end{cases}$$
+$$
+A =
+\begin{cases}
+\text{exploit} & \text{with probability } \alpha \\
+\text{explore} & \text{with probability } 1 - \alpha
+\end{cases}
+$$
  
 **Level 2 — Reward realisation.** $R \mid A = a, \theta \sim p_\theta(\cdot \mid a)$.
  
