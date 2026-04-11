@@ -1,0 +1,5 @@
+__author__ = "Mohamed Elwardi"
+__title__ = "Cost Geometry Under Investigation"
+__description__ = "Initial research into the geometric structure of cost within Humble Systems Theory."
+__status__ = "Research Prototype"
+__version__ = "0.1.0"
