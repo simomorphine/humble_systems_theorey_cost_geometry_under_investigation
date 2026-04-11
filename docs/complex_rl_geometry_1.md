@@ -75,7 +75,7 @@ Lemma 1.2 is quietly important: our primary criterion $|\mathbb{E}[G_t]|$ is a *
  
 ### 1.2 Function Spaces
  
-Let $\mathcal{Q} = \mathcal{B}(\mathcal{S} \times \mathcal{A}, \mathbb{C})$ be the Banach space of bounded complex action-value functions with sup-norm $\|Q\|_\infty = \max_{s,a} |Q(s,a)|$.
+Let $\mathcal{Q} = \mathcal{B}(\mathcal{S} \times \mathcal{A}, \mathbb{C})$ be the Banach space of bounded complex action-value functions with sup-norm $\|Q\|_ \infty = \max_{s,a} |Q(s,a)|$.
  
 ### 1.3 Standard MDPs (Recalled)
  
@@ -137,7 +137,7 @@ $$\leq \lambda \sum_{s'} p(s' \mid s,a) \cdot |Q_1(s', \pi(s')) - Q_2(s', \pi(s'
  
 Banach's fixed-point theorem gives existence and uniqueness. $\square$
  
-**Corollary 3.2.** $\|Q^\pi\|_\infty \leq Z_{\max} / (1-\lambda)$.
+**Corollary 3.2.** $\|Q^ \pi\|_ \infty \leq Z_{\max} / (1-\lambda)$.
  
 **Structural decomposition.** Because the evaluation equation is linear over $\mathbb{C}$, the real and imaginary parts satisfy independent Bellman equations:
  
@@ -163,7 +163,7 @@ where $\pi_Q(s') = \arg\min_{a'} |Q(s', a')|$.
  
 ### The Obstruction
  
-We want $\|TQ_1 - TQ_2\|_\infty \leq \lambda \cdot \|Q_1 - Q_2\|_\infty$. The proof requires:
+We want $\|TQ_1 - TQ_2\|_ \infty \leq \lambda \cdot \|Q_1 - Q_2\|_ \infty$. The proof requires:
  
 $$|Q_1(s', a_1(s')) - Q_2(s', a_2(s'))| \leq \|Q_1 - Q_2\|_\infty$$
  
@@ -177,7 +177,7 @@ In $\mathbb{R}$ this holds because the real line is totally ordered. In $\mathbb
  
 ### A Partial Positive Result
  
-**Theorem 4.2** *(Scalar modulus contraction — proven).* Define $\hat{T} : \mathcal{B}(\mathcal{S}, \mathbb{R}_{\geq 0}) \to \mathcal{B}(\mathcal{S}, \mathbb{R}_{\geq 0})$ by:
+**Theorem 4.2** *(Scalar modulus contraction — proven).* Define T̂ : B(S, ℝ₊) → B(S, ℝ₊) by:
  
 $$(\hat{T}V)(s) = \min_{a \in \mathcal{A}} \sum_{s'} p(s' \mid s, a) \Bigl[ |z(s,a,s')| + \lambda \cdot V(s') \Bigr]$$
  
