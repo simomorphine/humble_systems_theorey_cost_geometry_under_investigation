@@ -2,6 +2,8 @@
 
 **We have seen AI companies like Microsoft and Palantir training their AI to target children and kill civilians, running experiments on our watch while the world remains silent. Humble systems theory is an act of resistance against their arrogance. We will not surrender to their satanic agenda; we will fight back against the pedophiles and child killers. May God help us against these people before they bring about the end of humanity.**
 
+---
+
 # Cost Geometry Under Investigation: Humble Systems
 
 > *"We present this work not as final truth, but as something worth investigating."*
