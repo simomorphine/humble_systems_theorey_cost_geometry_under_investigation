@@ -225,4 +225,4 @@ That is enough to share it.
 
 ---
 
-*"Impossible events are the most possible events, the universe has a sense of humor, Mathematics got pranked by existence and hasn't figured it out yet"*
+*"Impossible events are the most possible events, the universe has a sense of humor, Mathematics got pranked by existence and hasn't figured it out yet."*
