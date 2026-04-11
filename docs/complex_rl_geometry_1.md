@@ -67,7 +67,7 @@ For $z = a + ib \in \mathbb{C}$, we write $|z| = \sqrt{a^2 + b^2}$ for the modul
  
 $$\big| \, |z_1| - |z_2| \, \big| \leq |z_1 - z_2|$$
  
-**Lemma 1.2** *(Modulus of expectation).* For any $\mathbb{C}$-valued random variable $Z$ with $\mathbb{E}[|Z|] < \infinity$:
+**Lemma 1.2** *(Modulus of expectation).* For any $\mathbb{C}$-valued random variable $Z$ with $\mathbb{E}[|Z|] < \infty$:
  
 $$|\mathbb{E}[Z]| \leq \mathbb{E}[|Z|]$$
  
