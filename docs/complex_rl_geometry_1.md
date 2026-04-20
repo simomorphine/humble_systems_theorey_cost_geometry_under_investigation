@@ -271,7 +271,7 @@ $$\sum_{k=0}^\infty \lambda^k \phi(S_{t+k+1}) = \sum_{j=1}^\infty \lambda^{j-1} 
  
 **Step 4.** Separate the $k=0$ term and recombine for $k \geq 1$:
  
-$$Q^\pi_I = - \mathbb{E}^\pi\!\left[\phi(S_t) + \sum_{k=1}^\infty \lambda^k \phi(S_{t+k}) - \sum_{k=1}^\infty \lambda^{k-1} \phi(S_{t+k})\right]$$
+$$Q^\pi_I = - \mathbb{E}^\pi\left[\phi(S_t) + \sum_{k=1}^\infty \lambda^k \phi(S_{t+k}) - \sum_{k=1}^\infty \lambda^{k-1} \phi(S_{t+k})\right]$$
  
 **Step 5.** Factor the coefficient of $\phi(S_{t+k})$ for $k \geq 1$:
  
