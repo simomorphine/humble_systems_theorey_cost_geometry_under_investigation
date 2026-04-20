@@ -259,11 +259,11 @@ $$Q^\pi_I(s, a) = \phi(s) - (1 - \lambda) \cdot \mathbb{E}^\pi\!\left[\sum_{j=0}
  
 **Step 1.** Start from the definition:
  
-$$Q^\pi_I(s,a) = \mathbb{E}^\pi\!\left[\sum_{k=0}^\infty \lambda^k \bigl(\phi(S_{t+k}) - \phi(S_{t+k+1})\bigr)\right]$$
+$$Q^\pi_I(s,a) = \mathbb{E}^\pi\left[\sum_{k=0}^\infty \lambda^k \bigl(\phi(S_{t+k}) - \phi(S_{t+k+1})\bigr)\right]$$
  
 **Step 2.** Split the sum:
  
-$$= \mathbb{E}^\pi\!\left[\sum_{k=0}^\infty \lambda^k \phi(S_{t+k}) - \sum_{k=0}^\infty \lambda^k \phi(S_{t+k+1})\right]$$
+$$= \mathbb{E}^\pi\left[\sum_{k=0}^\infty \lambda^k \phi(S_{t+k}) - \sum_{k=0}^\infty \lambda^k \phi(S_{t+k+1})\right]$$
  
 **Step 3.** Reindex the second sum with $j = k+1$:
  
