@@ -243,7 +243,7 @@ The information debt of a transition is determined entirely by the difference in
  
 $$\mathbb{E}^\pi[\phi(S_{t+1}) \mid S_t = s, A_t = a] \leq \phi(s) \qquad \forall (s, a, \pi)$$
  
-In a Bayesian setting with $\phi(s) = H(\text{belief at } s)$, this is guaranteed by the law of total expectation — Bayesian updates never increase entropy on average.
+In a Bayesian setting with $\phi(s) = - H(\text{belief at } s)$, this is guaranteed by the law of total expectation — Bayesian updates never increase entropy on average.
  
 ---
  
