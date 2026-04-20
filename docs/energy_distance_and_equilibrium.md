@@ -118,9 +118,9 @@ $$d_\gamma(b_i, b_k) \leq d_\gamma(b_i, b_j) + d_\gamma(b_j, b_k)$$
 
 *Proof sketch.* For $\gamma = 1$:
 
-$$d_\gamma(b_i, b_k)^2 = cost(b_i, b_k)^2 + \text{debt}(b_i, b_k)^2 \leq [cost(b_i, b_j) + cost(b_j, b_k)]^2 + [\text{debt}(b_i, b_j) + \text{debt}(b_j, b_k)]^2$$
+$$d_1(b_i, b_k)^2 = cost(b_i, b_k)^2 + \text{debt}(b_i, b_k)^2 \leq [cost(b_i, b_j) + cost(b_j, b_k)]^2 + [\text{debt}(b_i, b_j) + \text{debt}(b_j, b_k)]^2$$
 
-By the Minkowski inequality in $\mathbb{R}^2$, this is bounded by $[d_\gamma(b_i, b_j) + d_\gamma(b_j, b_k)]^2$. The result extends to all $\gamma \in [0, 1]$ by continuity. $\square$
+By the Minkowski inequality in $\mathbb{R}^2$, this is bounded by $[d_1(b_i, b_j) + d_1(b_j, b_k)]^2$. The result extends to all $\gamma \in [0, 1]$ by continuity. $\square$
 
 ### 4.3 Geometric Interpretation
 
