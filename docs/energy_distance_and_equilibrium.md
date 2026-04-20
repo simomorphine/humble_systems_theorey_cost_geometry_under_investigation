@@ -64,7 +64,11 @@ The potential $\psi(b)$ quantifies the "computational obligation" carried by bel
 
 $$\sum_{k=1}^{n} \text{debt}(b_k, b_{k+1}) = 0 \quad (b_{n+1} = b_1)$$
 
-5. **Gauge Invariance:** For any constant $c \in \mathbb{R}$, if $\psi'(b) = \psi(b) + c$ for all $b$, then $$\text{debt}_{\psi'}(b_i, b_j) = \text{debt}_\psi(b_i, b_j)$$.
+5. **Gauge Invariance:** For any constant $c \in \mathbb{R}$, if $\psi'(b) = \psi(b) + c$ for all $b$, then:
+
+$$
+\text{debt}_{\psi'}(b_i, b_j) = \text{debt}_ \psi(b_i, b_j)
+$$
 
 *Proof.* All properties follow directly from the definition as a potential difference. Additivity: $\text{debt}(b_i, b_j) + \text{debt}(b_j, b_k) = [\psi(b_j) - \psi(b_i)] + [\psi(b_k) - \psi(b_j)] = \psi(b_k) - \psi(b_i)$. Cycle invariance follows by telescoping. Gauge invariance: $[\psi(b_j) + c] - [\psi(b_i) + c] = \psi(b_j) - \psi(b_i)$. $\square$
 
