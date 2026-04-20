@@ -84,7 +84,7 @@ $$|Q(b_i, b_j)| = | d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j) |$$
 
 where $i = \sqrt{-1}$. This packages energy (real part, non-negative) and debt (imaginary part, signed) into a single complex number. The complex structure naturally accommodates their different characters: energy is constrained to the non-negative real axis, while debt ranges over the full imaginary axis.
 
-**Proposition 3.2 (Quasi-Metric Properties of $Q$).** The complex-valued function $Q$ satisfies:
+**Proposition 3.2 (Properties of $Q$).** The complex-valued function $Q$ satisfies:
 
 1. $Q(b_i, b_i) = 0$
 2. $\text{Re}(Q(b_i, b_j)) \geq 0$
