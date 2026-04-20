@@ -1,6 +1,6 @@
 # Belief Space Geometry: Energy, Debt, and Equilibrium in Information Processing Systems
 
-**Mohammed Elwardi**
+**Mohamed Elwardi**
 
 ---
 
@@ -92,7 +92,7 @@ where $i = \sqrt{-1}$. This packages energy (real part, non-negative) and debt (
 
 In polar form, each transition corresponds to a point:
 
-$$Q(b_i, b_j) = |Q(b_i, b_j)| \, e^{i\theta}, \quad \theta = \arctan\!\left(\frac{\text{debt}(b_i, b_j)}{d(b_i, b_j)}\right)$$
+$$Q(b_i, b_j) = |Q(b_i, b_j)| \, e^{i\theta}, \quad \theta = \arctan\left(\frac{\text{debt}(b_i, b_j)}{d(b_i, b_j)}\right)$$
 
 where $\theta$ represents the **debt-to-energy ratio** — a natural operating point in the energy-debt trade-off space.
 
