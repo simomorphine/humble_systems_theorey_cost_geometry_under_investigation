@@ -253,7 +253,7 @@ This is the algebraic heart of the paper.
  
 **Theorem 7.1** *(Telescoping identity).* Let $d$ take the potential difference form. For any deterministic policy $\pi$, state $s$, and action $a$:
  
-$$Q^\pi_I(s, a) = \phi(s) - (1 - \lambda) \cdot \mathbb{E}^\pi\!\left[\sum_{j=0}^\infty \lambda^j \cdot \phi(S_{t+j+1}) \;\Bigg|\; S_t = s, A_t = a\right]$$
+$$Q^\pi_I(s, a) = - \phi(s) + (1 - \lambda) \cdot \mathbb{E}^\pi\left[\sum_{j=0}^\infty \lambda^j \cdot \phi(S_{t+j+1}) \;\Bigg|\; S_t = s, A_t = a\right]$$
  
 *Proof (six steps of pure algebra).*
  
