@@ -6,7 +6,7 @@
 
 ## Abstract
 
-We introduce a mathematical framework for characterizing the belief space of information processing systems by coupling energy costs with informational debt. By defining a complex-valued quasi-metric $Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j)$, where $d$ is an energy quasi-metric and $\text{debt}$ is derived from a potential function, we uncover a rich geometric structure. The resulting family of metrics, parameterized by $\gamma \in [0, 1]$, continuously interpolates between pure thermodynamic (energy-only) and energy-debt geometries.
+We introduce a mathematical framework for characterizing the belief space of information processing systems by coupling energy costs with informational debt. By defining a complex-valued quasi-metric $Q(b_i, b_j) = cost(b_i, b_j) + i \cdot \text{debt}(b_i, b_j)$, where $d$ is an energy quasi-metric and $\text{debt}$ is derived from a potential function, we uncover a rich geometric structure. The resulting family of metrics, parameterized by $\gamma \in [0, 1]$, continuously interpolates between pure thermodynamic (energy-only) and energy-debt geometries.
 
 We further study how the asymmetry of this gamma distance induces a natural **bitopological structure** on belief space, generating forward and backward topologies $(\tau_+, \tau_-)$ and a hierarchy of equilibrium concepts:
 
