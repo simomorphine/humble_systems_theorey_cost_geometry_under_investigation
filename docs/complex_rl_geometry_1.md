@@ -141,9 +141,9 @@ Banach's fixed-point theorem gives existence and uniqueness. $\square$
  
 **Structural decomposition.** Because the evaluation equation is linear over $\mathbb{C}$, the real and imaginary parts satisfy independent Bellman equations:
  
-$$Q^\pi_R(s,a) = \mathbb{E}^\pi\!\left[\sum_{k=0}^\infty \lambda^k \cdot c(S_{t+k}, A_{t+k}, S_{t+k+1})\right]$$
+$$Q^\pi_R(s,a) = \mathbb{E}^\pi\left[\sum_{k=0}^\infty \lambda^k \cdot c(S_{t+k}, A_{t+k}, S_{t+k+1})\right]$$
  
-$$Q^\pi_I(s,a) = \mathbb{E}^\pi\!\left[\sum_{k=0}^\infty \lambda^k \cdot d(S_{t+k}, A_{t+k}, S_{t+k+1})\right]$$
+$$Q^\pi_I(s,a) = \mathbb{E}^\pi\left[\sum_{k=0}^\infty \lambda^k \cdot d(S_{t+k}, A_{t+k}, S_{t+k+1})\right]$$
  
 The two components are decoupled in *evaluation* but coupled in *action selection* via:
  
