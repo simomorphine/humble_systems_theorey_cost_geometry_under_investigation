@@ -80,7 +80,7 @@ These properties establish that debt is a **conservative quantity**, fundamental
 
 **Definition 3.1 (Complex Quasi-Metric).** The complex quasi-metric on belief space is:
 
-$$|Q(b_i, b_j)| = | d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j) |$$
+$$|Q(b_i, b_j)| = | cost(b_i, b_j) + i \cdot \text{debt}(b_i, b_j) |$$
 
 where $i = \sqrt{-1}$. This packages energy (real part, non-negative) and debt (imaginary part, signed) into a single complex number. The complex structure naturally accommodates their different characters: energy is constrained to the non-negative real axis, while debt ranges over the full imaginary axis.
 
@@ -92,9 +92,9 @@ where $i = \sqrt{-1}$. This packages energy (real part, non-negative) and debt (
 
 In polar form, each transition corresponds to a point:
 
-$$Q(b_i, b_j) = |Q(b_i, b_j)| \, e^{i\theta}, \quad \theta = \arctan\left(\frac{\text{debt}(b_i, b_j)}{d(b_i, b_j)}\right)$$
+$$Q(b_i, b_j) = |Q(b_i, b_j)| \, e^{i\theta}, \quad \theta = \arctan\left(\frac{\text{debt}(b_i, b_j)}{cost(b_i, b_j)}\right)$$
 
-where $\theta$ represents the **debt-to-energy ratio** — a natural operating point in the energy-debt trade-off space.
+where $\theta$ represents the **debt-to-cost ratio** — a natural operating point in the energy-debt trade-off space.
 
 ---
 
