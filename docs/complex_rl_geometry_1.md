@@ -231,7 +231,7 @@ Two things carry forward: information gain *belongs* in the utility, and it is *
  
 **Definition 6.1** *(Epistemic potential).* A function $\phi : \mathcal{S} \to \mathbb{R}$ is an epistemic potential. The imaginary component $d$ takes the **potential difference form** if:
  
-$$d(s, a, s') = \phi(s) - \phi(s')$$
+$$d(s, a, s') = \phi(s') - \phi(s)$$
  
 for all $(s, a, s') \in \mathcal{S} \times \mathcal{A} \times \mathcal{S}$.
  
