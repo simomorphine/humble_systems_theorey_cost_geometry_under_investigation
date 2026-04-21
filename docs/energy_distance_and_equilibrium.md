@@ -184,9 +184,11 @@ $$d_{\text{max}}(b, x) = max{d_\gamma(b, x) , d_\gamma(x, b)}$$
 
 **Proposition**
 
-$d_\gamma$ and $d_max$ are equivalent distances on $B$.
+$d_\gamma$ and $d_{\text{max}}$ are equivalent distances on $B$.
 
 *Proof.* 
+
+$$d_\gamma \leq d_{\text{max}} \leq 2d_\gamma$$
 
 **Proposition 6.3 (Intersection Property).**
 
