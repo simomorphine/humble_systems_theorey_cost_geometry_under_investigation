@@ -232,7 +232,7 @@ The set of all locally symmetric points is denoted $\text{Sym}_\gamma(\mathcal{B
 
 Two remarks are in order. First, the limit uses $\tau_{\text{avg}}$ — the natural choice since $d_{\text{avg}}$ appears in the denominator; using $\tau_+$ or $\tau_-$ would introduce an asymmetric dependence that obscures the meaning. Second, $d_{\text{avg}}(b, x) = d_\gamma(b, x) + d_\gamma(x, b) > 0$ for $x \neq b$, so the ratio is well-defined away from $b$.
 
-**Proposition 6.10 (Fixed Points).** Every fixed point $b^ *$ (where $Q(b^ *, b^ *) = 0$) belongs to all four equilibrium subspaces and to $\text{Sym}_\gamma(\mathcal{B})$.
+**Proposition 6.10 (Fixed Points).** Every fixed point $b^ *$ (where $Q(b^ *, b^ *) = 0$) belongs to all four equilibrium subspaces.
 
 ---
 
@@ -264,7 +264,6 @@ This gives rise to three algorithm classes:
 8. **Convergence dynamics:** Under what dynamics on $\mathcal{B}$ do trajectories converge to $E$?
 9. **Biological systems:** Do biological information processors operate at characteristic $\gamma$ values?
 10. **Strict inclusion:** When is $E_{\text{avg}} \subsetneq E_\vee$? What properties of the debt function determine whether equilibrium concepts coincide?
-11. **Relationship between $E_{\text{avg}}$ and $\text{Sym}_\gamma(\mathcal{B})$:** Under what conditions on $\text{cost}$ and $\psi$ does $E_{\text{avg}} = \text{Sym}_\gamma(\mathcal{B})$? If $\text{cost}$ is continuous and $\psi \in C^1$, is there always an inclusion in one direction? Equality may fail when $U_{\text{pre}}$ is sparse relative to the set of locally symmetric points.
 
 ---
 
