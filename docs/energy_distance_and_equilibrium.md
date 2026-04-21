@@ -154,11 +154,9 @@ The backward ball $B^-(b, \varepsilon)$ contains beliefs *from which* $b$ *is re
 
 **Definition 5.3 (Bitopological Space).** The triple $(\mathcal{B}, \tau_+, \tau_-)$ is the **bitopological space** of the system. We write $(\mathcal{B}, \rightarrow)$ for $(\mathcal{B}, \tau_+)$ and $(\mathcal{B}, \leftarrow)$ for $(\mathcal{B}, \tau_-)$.
 
-**Proposition 5.4.** If $\text{debt} \equiv 0$, then $\tau_+ = \tau_-$. Otherwise, neither topology is generally finer than the other.
+**Definition 5.4 (Join Topology).** The join topology $\tau_+ \vee \tau_-$ is the coarsest topology containing both $\tau_+$ and $\tau_-$, with basis:
 
-**Definition 5.5 (Join Topology).** The join topology $\tau_+ \vee \tau_-$ is the coarsest topology containing both $\tau_+$ and $\tau_-$, with basis:
-
-$$\mathcal{B}^\vee = \{B^+(b, \varepsilon) \cap B^-(b, \delta) : b \in \mathcal{B},\; \varepsilon, \delta > 0\}$$
+$$\mathcal{B}^\vee = \{B^+(b, \varepsilon) \cap B^-(b, \delta) : b \in \mathcal{B} \; \varepsilon, \delta > 0\}$$
 
 A neighborhood in the join topology requires both forward and backward proximity simultaneously.
 
