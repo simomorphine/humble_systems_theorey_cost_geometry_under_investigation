@@ -104,10 +104,10 @@ where $\theta$ represents the **debt-to-cost ratio** — a natural operating poi
 
 **Definition 4.1 ($\gamma$-Distance).** For $\gamma \in [0, 1]$, the $\gamma$-distance is:
 
-$$d_\gamma(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2}$$
+$$d_\gamma(b_i, b_j) = \sqrt{cost(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2}$$
 
 At the extremes:
-- $\gamma = 0$: $d_\gamma(b_i, b_j) = d(b_i, b_j)$ — *pure energy metric*
+- $\gamma = 0$: $d_\gamma(b_i, b_j) = cost(b_i, b_j)$ — *pure energy metric*
 - $\gamma = 1$: $d_\gamma(b_i, b_j) = |Q(b_i, b_j)|$ — *full energy-debt metric*
 
 ### 4.2 Metric Properties
