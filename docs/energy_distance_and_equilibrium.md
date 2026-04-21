@@ -235,7 +235,7 @@ $$\liminf_{x \to b} \frac{|d_\gamma(b, x) - d_\gamma(x, b)|}{d_{\text{avg}}(b, x
 
 The relative asymmetry in $\gamma$-distance vanishes locally around beliefs in $E_{\text{avg}}$. In terms of debt, since $d_\gamma(b, x) - d_\gamma(x, b) \approx \frac{2\,\text{debt}(b, x)}{d_\gamma}$ when $d$ is fixed and debt changes sign, near $E_{\text{avg}}$ the debt component is small relative to total distance.
 
-**Proposition 6.8 (Fixed Points).** Every fixed point $b^*$ (where $Q(b^*, b^*) = 0$) belongs to all four equilibrium subspaces.
+**Proposition 6.8 (Fixed Points).** Every fixed point $b^ *$ (where $Q(b^ *, b^ *) = 0$) belongs to all four equilibrium subspaces.
 
 ---
 
