@@ -17,9 +17,9 @@ This framework reveals that information processing systems inhabit a richer math
 ---
 
 ## 1. The Belief Space and Energy Quasi-Metric
-**motivation: Imagine a moving agent evolving in a belief space. The agent aims to transition from a belief state $A$ to a belief state $B$. We observe several key properties: moving from $A$ to $B$ requires an energy cost, while remaining in place—i.e., not updating the belief—incurs no cost. Moreover, this energy cost is always positive.
+**motivation:** Imagine a moving agent evolving in a belief space. The agent aims to transition from a belief state $A$ to a belief state $B$. We observe several key properties: moving from $A$ to $B$ requires an energy cost, while remaining in place—i.e., not updating the belief—incurs no cost. Moreover, this energy cost is always positive.
 
-The central question motivating this work is: what conditions are required for this energy cost to form a quasi-metric (triangular inequality hold)? The answer is subtle. The energy cost may or may not satisfy the properties of a quasi-metric. However, even when it fails to do so, we propose that a *regulation debt* naturally emerges.
+The central question motivating this work is: what conditions are required for this energy cost to form a quasi-metric (triangular inequality holds)? The answer is subtle. The energy cost may or may not satisfy the properties of a quasi-metric. However, even when it fails to do so, we propose that a *regulation debt* naturally emerges.
 
 Formally, assume that with probability $\alpha$, the cost behaves as a quasi-metric, and with probability (1 - $\alpha$), a regulation debt is generated instead. This leads us to focus on the complex-valued quantity:
 
