@@ -182,6 +182,12 @@ This measures the **round-trip cost**: going from $b$ to $x$ and back.
 
 $$d_{\text{max}}(b, x) = max{d_\gamma(b, x) , d_\gamma(x, b)}$$
 
+**Proposition**
+
+$d_\gamma$ and $d_max$ are equivalent distances on $B$.
+
+*Proof.* 
+
 **Proposition 6.3 (Intersection Property).**
 
 $$B^+(b, \varepsilon) \cap B^-(b, \varepsilon) \subseteq B_{\text{avg}}(b, 2\varepsilon)$$
