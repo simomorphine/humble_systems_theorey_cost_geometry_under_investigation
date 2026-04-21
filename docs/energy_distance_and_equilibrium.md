@@ -291,7 +291,7 @@ The second law: spontaneous processes have $\text{debt} < 0$. Equilibrium belief
 3. **Hamiltonian formulation:** Does the complex structure of $Q$ suggest a natural Hamiltonian dynamics on belief space?
 4. **Geometry of $E_{\text{avg}}$:** Is $E_{\text{avg}}$ dense in $\mathcal{B}$, connected, or a manifold?
 5. **Conservation laws:** Are there conserved quantities along trajectories in $Q$-space analogous to energy-momentum conservation?
-6. **Statistical mechanics:** Can we define a "$\gamma$-temperature" and formulate statistical mechanics in the $\gamma$-geometry?
+6. **Statistical mechanics:** Can we define a $\gamma$-temperature and formulate statistical mechanics in the $\gamma$-geometry?
 7. **Information-theoretic bounds:** Can Landauer's principle and holographic bounds be reformulated using the debt function?
 8. **Convergence dynamics:** Under what dynamics on $\mathcal{B}$ do trajectories converge to $E$?
 9. **Biological systems:** Do biological information processors operate at characteristic $\gamma$ values?
