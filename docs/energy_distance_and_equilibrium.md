@@ -184,7 +184,7 @@ $$d_{\text{max}}(b, x) = max{d_\gamma(b, x) , d_\gamma(x, b)}$$
 
 **Proposition**
 
-$d_\gamma$ and $d_{\text{max}}$ are equivalent distances on $B$.
+$d_\gamma$ and $d_{\text{max}}$ are equivalent distances, and they define the same topology on $B$.
 
 *Proof.* 
 
