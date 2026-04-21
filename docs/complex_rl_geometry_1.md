@@ -3,7 +3,7 @@
 ### Complex-Valued Reinforcement Learning: Geometry, Information, and Epistemic Equilibrium
  
 **Mohamed Elwardi** · Independent Researcher, Casablanca
-**Humble Systems Theory Research Group** · 
+**Humble Systems Theory** · 
 *March 2026 · Working Paper*
  
 ---
