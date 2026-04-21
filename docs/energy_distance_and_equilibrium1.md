@@ -226,7 +226,7 @@ $$E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$$
 
 **Definition 6.9 (Local Asymmetry Vanishing).** A belief $b \in \mathcal{B}$ is called a **locally symmetric point** of $d_\gamma$ if:
 
-$$\liminf_{\substack{x \to_{\tau_{\text{avg}}} b \\ x \neq b}} \frac{|d_\gamma(b,x) - d_\gamma(x,b)|}{d_{\text{avg}}(b,x)} = 0$$
+$$\liminf_{\substack{x \to_{\tau_{\text{avg}}} b ; \\ x \neq b}} \frac{|d_\gamma(b,x) - d_\gamma(x,b)|}{d_{\text{avg}}(b,x)} = 0$$
 
 The set of all locally symmetric points is denoted $\text{Sym}_\gamma(\mathcal{B})$.
 
