@@ -138,7 +138,7 @@ As $\gamma$ varies from $0$ to $1$, the metric structure of belief space continu
 
 ### 5.1 Two Topologies from One Distance
 
-The asymmetry $d_\gamma(b_i, b_j) \neq d_\gamma(b_j, b_i)$ (when debt is present) naturally generates **two distinct topologies** on $\mathcal{B}$.
+The asymmetry $d_\gamma(b_i, b_j) \neq d_\gamma(b_j, b_i)$ naturally generates **two distinct topologies** on $\mathcal{B}$.
 
 **Definition 5.1 (Forward Topology $\tau_+$).** Basis:
 
