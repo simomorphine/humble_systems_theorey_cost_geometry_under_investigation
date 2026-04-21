@@ -178,6 +178,8 @@ This measures the **round-trip cost**: going from $b$ to $x$ and back.
 
 *Proof.* Symmetry is immediate. Triangle inequality: $d_{\text{avg}}(b, y) \leq d_{\text{avg}}(b, x) + d_{\text{avg}}(x, y)$ follows from applying the triangle inequality of $d_\gamma$ to each direction separately. $\square$
 
+**Definition (Max Distance)**
+$$d_{\text{max}}(b, x) = \{d_\gamma(b, x) , d_\gamma(x, b)\}$$
 **Proposition 6.3 (Intersection Property).**
 
 $$B^+(b, \varepsilon) \cap B^-(b, \varepsilon) \subseteq B_{\text{avg}}(b, 2\varepsilon)$$
