@@ -232,7 +232,7 @@ The set of all locally symmetric points is denoted $\text{Sym}_\gamma(\mathcal{B
 
 Two remarks are in order. First, the limit uses $\tau_{\text{avg}}$ — the natural choice since $d_{\text{avg}}$ appears in the denominator; using $\tau_+$ or $\tau_-$ would introduce an asymmetric dependence that obscures the meaning. Second, $d_{\text{avg}}(b, x) = d_\gamma(b, x) + d_\gamma(x, b) > 0$ for $x \neq b$, so the ratio is well-defined away from $b$.
 
-**Proposition 6.10 (Fixed Points).** Every fixed point $b^*$ (where $Q(b^*, b^*) = 0$) belongs to all four equilibrium subspaces and to $\text{Sym}_\gamma(\mathcal{B})$.
+**Proposition 6.10 (Fixed Points).** Every fixed point $b^ *$ (where $Q(b^ *, b^ *) = 0$) belongs to all four equilibrium subspaces and to $\text{Sym}_\gamma(\mathcal{B})$.
 
 ---
 
