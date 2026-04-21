@@ -150,7 +150,7 @@ The forward ball $B^+(b, \varepsilon)$ contains beliefs *reachable from* $b$ wit
 
 $$B^-(b, \varepsilon) = \{x \in \mathcal{B} : d_\gamma(x, b) < \varepsilon\}$$
 
-The backward ball $B^-(b, \varepsilon)$ contains beliefs *from which $b$ is reachable* with cost less than $\varepsilon$.
+The backward ball $B^-(b, \varepsilon)$ contains beliefs *from which* $b$ *is reachable* with cost less than $\varepsilon$.
 
 **Definition 5.3 (Bitopological Space).** The triple $(\mathcal{B}, \tau_+, \tau_-)$ is the **bitopological space** of the system. We write $(\mathcal{B}, \rightarrow)$ for $(\mathcal{B}, \tau_+)$ and $(\mathcal{B}, \leftarrow)$ for $(\mathcal{B}, \tau_-)$.
 
