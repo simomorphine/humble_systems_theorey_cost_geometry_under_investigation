@@ -6,7 +6,7 @@
 
 ## Abstract
 
-We introduce a mathematical framework for characterizing the belief space of information processing systems by coupling energy costs with informational debt. By defining a complex-valued quasi-metric $Q(b_i, b_j) = \text{cost}(b_i, b_j) + i \cdot \text{debt}(b_i, b_j)$, where $\text{cost}$ behave like an energy quasi-metric and $\text{debt}$ is derived from a potential function, we uncover a rich geometric structure. The resulting family of metrics, parameterized by $\gamma \in [0, 1]$, continuously interpolates between pure thermodynamic (energy-only) and energy-debt geometries.
+We introduce a mathematical framework for characterizing the belief space of information processing systems by coupling energy costs with informational debt. By defining a complex-valued quasi-metric $Q(b_i, b_j) = \text{cost}(b_i, b_j) + i \cdot \text{debt}(b_i, b_j)$, where $\text{cost}$ behaves like an energy quasi-metric and $\text{debt}$ is derived from a potential function, we uncover a rich geometric structure. The resulting family of metrics, parameterized by $\gamma \in [0, 1]$, continuously interpolates between pure thermodynamic (energy-only) and energy-debt geometries.
 
 We further study how the asymmetry of this gamma distance induces a natural **bitopological structure** on belief space, generating forward and backward topologies $(\tau_+, \tau_-)$ and a hierarchy of equilibrium concepts:
 
@@ -17,15 +17,14 @@ This framework reveals that information processing systems inhabit a richer math
 ---
 
 ## 1. The Belief Space and Energy Quasi-Metric
-**motivation:** Imagine a moving agent evolving in a belief space. The agent aims to transition from a belief state $A$ to a belief state $B$. We observe several key properties: moving from $A$ to $B$ requires an energy cost, while remaining in place—i.e., not updating the belief—incurs no cost. Moreover, this energy cost is always positive.
+
+**Motivation.** Imagine a moving agent evolving in a belief space. The agent aims to transition from a belief state $A$ to a belief state $B$. We observe several key properties: moving from $A$ to $B$ requires an energy cost, while remaining in place — i.e., not updating the belief — incurs no cost. Moreover, this energy cost is always positive.
 
 The central question motivating this work is: what conditions are required for this energy cost to form a quasi-metric (triangular inequality holds)? The answer is subtle. The energy cost may or may not satisfy the properties of a quasi-metric. However, even when it fails to do so, we propose that a *regulation debt* naturally emerges.
 
-Formally, assume that with probability $\alpha$, the cost behaves as a quasi-metric, and with probability (1 - $\alpha$), a regulation debt is generated instead. This leads us to focus on the complex-valued quantity:
+Formally, assume that with probability $\alpha$, the cost behaves as a quasi-metric, and with probability $(1 - \alpha)$, a regulation debt is generated instead. This leads us to focus on the complex-valued quantity:
 
-$$
-\text{cost} + i \cdot \text{debt}.
-$$
+$$\text{cost} + i \cdot \text{debt}.$$
 
 This object captures both the geometric structure (when quasi-metric properties hold) and the corrective or compensatory dynamics (when they fail), offering a richer framework for understanding motion in belief spaces.
 
@@ -66,9 +65,7 @@ $$\sum_{k=1}^{n} \text{debt}(b_k, b_{k+1}) = 0 \quad (b_{n+1} = b_1)$$
 
 5. **Gauge Invariance:** For any constant $c \in \mathbb{R}$, if $\psi'(b) = \psi(b) + c$ for all $b$, then:
 
-$$
-\text{debt}_{\psi'}(b_i, b_j) = \text{debt}_ \psi(b_i, b_j)
-$$
+$$\text{debt}_{\psi'}(b_i, b_j) = \text{debt}_\psi(b_i, b_j)$$
 
 *Proof.* All properties follow directly from the definition as a potential difference. Additivity: $\text{debt}(b_i, b_j) + \text{debt}(b_j, b_k) = [\psi(b_j) - \psi(b_i)] + [\psi(b_k) - \psi(b_j)] = \psi(b_k) - \psi(b_i)$. Cycle invariance follows by telescoping. Gauge invariance: $[\psi(b_j) + c] - [\psi(b_i) + c] = \psi(b_j) - \psi(b_i)$. $\square$
 
@@ -80,7 +77,7 @@ These properties establish that debt is a **conservative quantity**, fundamental
 
 **Definition 3.1 (Complex Quasi-Metric).** The complex quasi-metric on belief space is:
 
-$$|Q(b_i, b_j)| = | cost(b_i, b_j) + i \cdot \text{debt}(b_i, b_j) |$$
+$$|Q(b_i, b_j)| = | \text{cost}(b_i, b_j) + i \cdot \text{debt}(b_i, b_j) |$$
 
 where $i = \sqrt{-1}$. This packages energy (real part, non-negative) and debt (imaginary part, signed) into a single complex number. The complex structure naturally accommodates their different characters: energy is constrained to the non-negative real axis, while debt ranges over the full imaginary axis.
 
@@ -92,7 +89,7 @@ where $i = \sqrt{-1}$. This packages energy (real part, non-negative) and debt (
 
 In polar form, each transition corresponds to a point:
 
-$$Q(b_i, b_j) = |Q(b_i, b_j)|e^{i\theta} , \quad \theta = \arctan\left(\frac{\text{debt}(b_i, b_j)}{cost(b_i, b_j)}\right)$$
+$$Q(b_i, b_j) = |Q(b_i, b_j)|e^{i\theta}, \quad \theta = \arctan\left(\frac{\text{debt}(b_i, b_j)}{\text{cost}(b_i, b_j)}\right)$$
 
 where $\theta$ represents the **debt-to-cost ratio** — a natural operating point in the energy-debt trade-off space.
 
@@ -104,10 +101,10 @@ where $\theta$ represents the **debt-to-cost ratio** — a natural operating poi
 
 **Definition 4.1 ($\gamma$-Distance).** For $\gamma \in [0, 1]$, the $\gamma$-distance is:
 
-$$d_\gamma(b_i, b_j) = \sqrt{cost(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2}$$
+$$d_\gamma(b_i, b_j) = \sqrt{\text{cost}(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2}$$
 
 At the extremes:
-- $\gamma = 0$: $d_\gamma(b_i, b_j) = cost(b_i, b_j)$ — *pure energy metric*
+- $\gamma = 0$: $d_\gamma(b_i, b_j) = \text{cost}(b_i, b_j)$ — *pure energy metric*
 - $\gamma = 1$: $d_\gamma(b_i, b_j) = |Q(b_i, b_j)|$ — *full energy-debt metric*
 
 ### 4.2 Metric Properties
@@ -118,7 +115,7 @@ $$d_\gamma(b_i, b_k) \leq d_\gamma(b_i, b_j) + d_\gamma(b_j, b_k)$$
 
 *Proof sketch.* For $\gamma = 1$:
 
-$$d_1(b_i, b_k)^2 = cost(b_i, b_k)^2 + \text{debt}(b_i, b_k)^2 \leq [cost(b_i, b_j) + cost(b_j, b_k)]^2 + [\text{debt}(b_i, b_j) + \text{debt}(b_j, b_k)]^2$$
+$$d_1(b_i, b_k)^2 = \text{cost}(b_i, b_k)^2 + \text{debt}(b_i, b_k)^2 \leq [\text{cost}(b_i, b_j) + \text{cost}(b_j, b_k)]^2 + [\text{debt}(b_i, b_j) + \text{debt}(b_j, b_k)]^2$$
 
 By the Minkowski inequality in $\mathbb{R}^2$, this is bounded by $[d_1(b_i, b_j) + d_1(b_j, b_k)]^2$. The result extends to all $\gamma \in [0, 1]$ by continuity. $\square$
 
@@ -142,7 +139,7 @@ The asymmetry $d_\gamma(b_i, b_j) \neq d_\gamma(b_j, b_i)$ naturally generates *
 
 **Definition 5.1 (Forward Topology $\tau_+$).** Basis:
 
-$$B^+(b, \varepsilon) = \{ x \in \mathcal{B} : d_\gamma(b, x) < \varepsilon \} $$
+$$B^+(b, \varepsilon) = \{ x \in \mathcal{B} : d_\gamma(b, x) < \varepsilon \}$$
 
 The forward ball $B^+(b, \varepsilon)$ contains beliefs *reachable from* $b$ with cost less than $\varepsilon$.
 
@@ -156,7 +153,7 @@ The backward ball $B^-(b, \varepsilon)$ contains beliefs *from which* $b$ *is re
 
 **Definition 5.4 (Join Topology).** The join topology $\tau_+ \vee \tau_-$ is the coarsest topology containing both $\tau_+$ and $\tau_-$, with basis:
 
-$$\mathcal{B}^\vee = \{B^+(b, \varepsilon) \cap B^-(b, \delta) : b \in \mathcal{B} \; \varepsilon, \delta > 0\}$$
+$$\mathcal{B}^\vee = \{B^+(b, \varepsilon) \cap B^-(b, \delta) : b \in \mathcal{B},\ \varepsilon, \delta > 0\}$$
 
 A neighborhood in the join topology requires both forward and backward proximity simultaneously.
 
@@ -176,17 +173,17 @@ This measures the **round-trip cost**: going from $b$ to $x$ and back.
 
 *Proof.* Symmetry is immediate. Triangle inequality: $d_{\text{avg}}(b, y) \leq d_{\text{avg}}(b, x) + d_{\text{avg}}(x, y)$ follows from applying the triangle inequality of $d_\gamma$ to each direction separately. $\square$
 
-**Definition 6.3 (Max Distance)**
+**Definition 6.3 (Max Distance).**
 
-$$d_{\text{max}}(b, x) = max{d_\gamma(b, x) , d_\gamma(x, b)}$$
+$$d_{\text{max}}(b, x) = \max\{d_\gamma(b, x),\ d_\gamma(x, b)\}$$
 
-**Proposition 6.4**
+**Proposition 6.4.**
 
-$d_\gamma$ and $d_{\text{max}}$ are equivalent distances, and they define the same topology on $B$.
+$d_\gamma$ and $d_{\text{max}}$ are equivalent distances, and they define the same topology on $\mathcal{B}$.
 
-*Proof.* 
+*Proof.*
 
-$$d_\gamma \leq d_{\text{max}} \leq 2d_\gamma$$
+$$d_\gamma \leq d_{\text{max}} \leq 2d_\gamma \qquad \square$$
 
 **Proposition 6.5 (Intersection Property).**
 
@@ -219,21 +216,23 @@ Taking the closure of $U_{\text{pre}}$ in different topologies yields four disti
 
 ### 6.3 The Equilibrium Hierarchy
 
-**Theorem 6.8. (Equilibrium Hierarchy).**
+**Theorem 6.8 (Equilibrium Hierarchy).**
 
 $$E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$$
 
 *Proof.* Since $\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-$, a set closed in the join topology is also closed in the average topology, giving $E_{\text{avg}} \subseteq E_\vee$. Since $\tau_+ \vee \tau_-$ is coarser than both $\tau_+$ and $\tau_-$ individually, $E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$. $\square$
 
-### 6.4 Characterization via Vanishing Asymmetry
+### 6.4 Local Asymmetry and Symmetric Points
 
-**Theorem 6.9.** A belief $b$ is in $E_{\text{avg}}$ if and only if:
+**Definition 6.9 (Local Asymmetry Vanishing).** A belief $b \in \mathcal{B}$ is called a **locally symmetric point** of $d_\gamma$ if:
 
-$$\liminf_{x \to b} \frac{|d_\gamma(b, x) - d_\gamma(x, b)|}{d_{\text{avg}}(b, x)} = 0$$
+$$\liminf_{\substack{x \to_{\tau_{\text{avg}}} b ; \\ x \neq b}} \frac{|d_\gamma(b,x) - d_\gamma(x,b)|}{d_{\text{avg}}(b,x)} = 0$$
 
-The relative asymmetry in $\gamma$-distance vanishes locally around beliefs in $E_{\text{avg}}$. In terms of debt, since $d_\gamma(b, x) - d_\gamma(x, b) \approx \frac{2\,\text{debt}(b, x)}{d_\gamma}$ when $d$ is fixed and debt changes sign, near $E_{\text{avg}}$ the debt component is small relative to total distance.
+The set of all locally symmetric points is denoted $\text{Sym}_\gamma(\mathcal{B})$.
 
-**Proposition 6.10. (Fixed Points).** Every fixed point $b^ *$ (where $Q(b^ *, b^ *) = 0$) belongs to all four equilibrium subspaces.
+Two remarks are in order. First, the limit uses $\tau_{\text{avg}}$ — the natural choice since $d_{\text{avg}}$ appears in the denominator; using $\tau_+$ or $\tau_-$ would introduce an asymmetric dependence that obscures the meaning. Second, $d_{\text{avg}}(b, x) = d_\gamma(b, x) + d_\gamma(x, b) > 0$ for $x \neq b$, so the ratio is well-defined away from $b$.
+
+**Proposition 6.10 (Fixed Points).** Every fixed point $b^ *$ (where $Q(b^ *, b^ *) = 0$) belongs to all four equilibrium subspaces.
 
 ---
 
@@ -248,41 +247,12 @@ As $\gamma$ increases from $0$ to $1$, optimal paths shift. An energy-efficient 
 This gives rise to three algorithm classes:
 
 - **Energy-efficient:** Minimize $d(b_i, b_j)$ regardless of debt
-- **Debt-efficient:** Minimize $|\text{debt}(b_i, b_j)|$ regardless of energy  
+- **Debt-efficient:** Minimize $|\text{debt}(b_i, b_j)|$ regardless of energy
 - **$\gamma$-efficient:** Minimize $d_\gamma(b_i, b_j)$ for a specific $\gamma$
 
 ---
 
-## 8. Examples
-
-### 8.1 Compression System
-
-Consider data compression with beliefs $b$ representing data structures.
-
-- $d(b, x)$: computational cost to transform $b$ to $x$
-- $\text{debt}(b, x)$: information loss (negative if losing information)
-
-Lossy compression has $\text{debt}(b_{\text{full}}, b_{\text{compressed}}) < 0$. Decompression has $\text{debt}(b_{\text{compressed}}, b_{\text{full}}) > 0$. Lossless schemes have $\text{debt} \approx 0$ and lie in $E_{\text{avg}}$.
-
-### 8.2 Gradient Flow
-
-For a function $J : \mathcal{B} \to \mathbb{R}$:
-
-- $d(b, x) = \|b - x\|$
-- $\text{debt}(b, x) = J(x) - J(b)$
-
-Then $d_\gamma(b, x) = \sqrt{\|b - x\|^2 + (J(x) - J(b))^2}$ measures distance plus change in $J$. Critical points of $J$ (where $\nabla J = 0$) satisfy $\text{debt}(b, x) \approx 0$ locally and lie in $E_{\text{avg}}$.
-
-### 8.3 Thermodynamic System
-
-- $d(b, x)$: energy cost of transition
-- $\text{debt}(b, x)$: entropy production (negative if spontaneous)
-
-The second law: spontaneous processes have $\text{debt} < 0$. Equilibrium beliefs (maximum entropy) have $\text{debt} \approx 0$ for nearby perturbations.
-
----
-
-## 9. Open Questions
+## 8. Open Questions
 
 1. **Explicit potentials:** Can we construct explicit $\psi$ for concrete systems (neural networks, reversible computers, quantum circuits)?
 2. **Determining $\gamma$:** What determines the effective $\gamma$ for a given system? Is it fundamental or tunable?
@@ -297,7 +267,7 @@ The second law: spontaneous processes have $\text{debt} < 0$. Equilibrium belief
 
 ---
 
-## 10. Conclusion
+## 9. Conclusion
 
 We have developed a unified mathematical framework extending the geometry of information processing systems beyond pure energy considerations. The key objects are:
 
@@ -305,8 +275,9 @@ We have developed a unified mathematical framework extending the geometry of inf
 - A **complex quasi-metric** $Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j)$ packaging energy and debt into a single geometric object
 - A **one-parameter family** $d_\gamma$ interpolating between pure energy ($\gamma = 0$) and full energy-debt ($\gamma = 1$) geometries
 - A **bitopological space** $(\mathcal{B}, \tau_+, \tau_-)$ arising from the asymmetry of $d_\gamma$, generating a natural hierarchy of equilibrium concepts
+- A **locally symmetric point set** $\text{Sym}_\gamma(\mathcal{B})$ characterizing beliefs where the $d_\gamma$-asymmetry vanishes to first order
 
-The hierarchy $E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$ captures distinct meanings of balance, from perfect local symmetry ($E_{\text{avg}}$) to directional reachability ($E_\rightarrow, E_\leftarrow$). This structure emerges naturally whenever a system optimizes simultaneously in two directions — it is not imposed, but discovered.
+The hierarchy $E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$ captures distinct meanings of balance, from perfect local symmetry ($E_{\text{avg}}$) to directional reachability ($E_\rightarrow, E_\leftarrow$). The relationship between $E_{\text{avg}}$ and $\text{Sym}_\gamma(\mathcal{B})$ remains an open question whose resolution depends on the interplay between the regularity of $\text{cost}$ and the structure of the potential $\psi$. This structure emerges naturally whenever a system optimizes simultaneously in two directions — it is not imposed, but discovered.
 
 ---
 
