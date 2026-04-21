@@ -142,7 +142,7 @@ The asymmetry $d_\gamma(b_i, b_j) \neq d_\gamma(b_j, b_i)$ naturally generates *
 
 **Definition 5.1 (Forward Topology $\tau_+$).** Basis:
 
-$$B^+(b, \varepsilon) = { \{x \in \mathcal{B} : d_\gamma(b, x) < \varepsilon\} }$$
+$$B^+(b, \varepsilon) = \{ x \in \mathcal{B} : d_\gamma(b, x) < \varepsilon \} $$
 
 The forward ball $B^+(b, \varepsilon)$ contains beliefs *reachable from* $b$ with cost less than $\varepsilon$.
 
