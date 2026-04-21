@@ -176,11 +176,11 @@ This measures the **round-trip cost**: going from $b$ to $x$ and back.
 
 *Proof.* Symmetry is immediate. Triangle inequality: $d_{\text{avg}}(b, y) \leq d_{\text{avg}}(b, x) + d_{\text{avg}}(x, y)$ follows from applying the triangle inequality of $d_\gamma$ to each direction separately. $\square$
 
-**Definition (Max Distance)**
+**Definition 6.3 (Max Distance)**
 
 $$d_{\text{max}}(b, x) = max{d_\gamma(b, x) , d_\gamma(x, b)}$$
 
-**Proposition**
+**Proposition 6.4**
 
 $d_\gamma$ and $d_{\text{max}}$ are equivalent distances, and they define the same topology on $B$.
 
@@ -188,13 +188,13 @@ $d_\gamma$ and $d_{\text{max}}$ are equivalent distances, and they define the sa
 
 $$d_\gamma \leq d_{\text{max}} \leq 2d_\gamma$$
 
-**Proposition 6.3 (Intersection Property).**
+**Proposition 6.5 (Intersection Property).**
 
 $$B^+(b, \varepsilon) \cap B^-(b, \varepsilon) \subseteq B_{\text{avg}}(b, 2\varepsilon)$$
 
 Beliefs in the intersection $B^+(b, \varepsilon) \cap B^-(b, \varepsilon)$ are *bidirectionally close* — they are both reachable from $b$ and can reach $b$ with low cost. These are the beliefs in approximate equilibrium with $b$.
 
-**Theorem 6.4 (Topological Hierarchy).**
+**Theorem 6.6 (Topological Hierarchy).**
 
 $$\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-$$
 
@@ -202,7 +202,7 @@ The average topology is coarser (fewer open sets) than the join topology.
 
 ### 6.2 Four Equilibrium Concepts
 
-**Definition 6.5 (Pre-equilibrium Set).**
+**Definition 6.7 (Pre-equilibrium Set).**
 
 $$U_{\text{pre}} = \bigcup_{b \in \mathcal{B}} B_{\text{avg}}(b, \varepsilon_b)$$
 
@@ -219,7 +219,7 @@ Taking the closure of $U_{\text{pre}}$ in different topologies yields four disti
 
 ### 6.3 The Equilibrium Hierarchy
 
-**Theorem 6.6 (Equilibrium Hierarchy).**
+**Theorem 6.8. (Equilibrium Hierarchy).**
 
 $$E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$$
 
@@ -227,13 +227,13 @@ $$E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$$
 
 ### 6.4 Characterization via Vanishing Asymmetry
 
-**Theorem 6.7.** A belief $b$ is in $E_{\text{avg}}$ if and only if:
+**Theorem 6.9.** A belief $b$ is in $E_{\text{avg}}$ if and only if:
 
 $$\liminf_{x \to b} \frac{|d_\gamma(b, x) - d_\gamma(x, b)|}{d_{\text{avg}}(b, x)} = 0$$
 
 The relative asymmetry in $\gamma$-distance vanishes locally around beliefs in $E_{\text{avg}}$. In terms of debt, since $d_\gamma(b, x) - d_\gamma(x, b) \approx \frac{2\,\text{debt}(b, x)}{d_\gamma}$ when $d$ is fixed and debt changes sign, near $E_{\text{avg}}$ the debt component is small relative to total distance.
 
-**Proposition 6.8 (Fixed Points).** Every fixed point $b^ *$ (where $Q(b^ *, b^ *) = 0$) belongs to all four equilibrium subspaces.
+**Proposition 6.10. (Fixed Points).** Every fixed point $b^ *$ (where $Q(b^ *, b^ *) = 0$) belongs to all four equilibrium subspaces.
 
 ---
 
