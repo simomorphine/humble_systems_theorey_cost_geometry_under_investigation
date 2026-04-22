@@ -319,11 +319,11 @@ $$= - H(\Theta \mid s, a) + H(\Theta \mid S_{t+1}, s, a) = - I(S_{t+1};\, \Theta
  
 **Corollary 8.3** *(Imaginary Q-value as discounted cumulative mutual information).* Under Assumption 8.1:
  
-$$Q^\pi_I(s,a) = \sum_{k=0}^\infty \lambda^k \cdot I\!\left(S_{t+k+1};\, \Theta \;\Big|\; S_{t+k}, A_{t+k}\right)$$
+$$Q^\pi_I(s,a) = - \sum_{k=0}^\infty \lambda^k \cdot I\left(S_{t+k+1};\, \Theta \;\Big|\; S_{t+k}, A_{t+k}\right)$$
  
 The imaginary Q-value is the discounted sum of *all future mutual information gains* along the trajectory under policy $\pi$.
  
-> **What was not assumed.** We did not choose mutual information as the measure of exploration. We wrote $d = \phi(s) - \phi(s')$ and imposed $\phi = H(\Theta \mid \cdot)$. Mutual information *emerged* from taking expectations because mutual information *is* expected entropy reduction by definition. The complex framework did not import information theory. Information theory fell out of it.
+> **What was not assumed.** We did not choose mutual information as the measure of exploration. We wrote $d = \phi(s') - \phi(s)$ and imposed $\phi = - H(\Theta \mid \cdot)$. Mutual information *emerged* from taking expectations because mutual information *is* expected entropy reduction by definition. The complex framework did not import information theory. Information theory fell out of it.
  
 ---
  
