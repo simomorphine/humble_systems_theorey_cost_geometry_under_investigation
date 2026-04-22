@@ -297,9 +297,9 @@ The Pareto frontier between cost and epistemic potential reduction is traced by 
  
 The telescoping identity holds for *any* $\phi$, algebraically. Now we give $\phi$ a semantic interpretation and watch what follows.
  
-**Assumption 8.1** *(Semantic interpretation of $\phi$).* There exists a latent variable $\Theta$ such that:
+**Assumption 8.1** (Semantic interpretation of $\phi$). There exists a latent variable $\Theta$ such that:
  
-$$\phi(s) = H(\Theta \mid S_t = s)$$
+$$\phi(s) = - H(\Theta \mid S_t = s)$$
  
 where $H(\Theta \mid S_t = s)$ is the conditional entropy of $\Theta$ given state $s$.
  
