@@ -355,7 +355,7 @@ Under Axiom 9.1, $\mathcal{L} \to 0$ only when both cost is minimised and the sy
  
 **Proposition 9.5** *(Epistemic equilibrium condition).* A policy $\pi$ is in epistemic equilibrium at $(s,a)$ if and only if:
  
-$$\phi(s) = (1-\lambda) \cdot \mathbb{E}^\pi\!\left[\sum_{k=0}^\infty \lambda^k \cdot \phi(S_{t+k+1}) \;\Bigg|\; S_t = s, A_t = a\right]$$
+$$\phi(s) = (1-\lambda) \cdot \mathbb{E}^\pi\left[\sum_{k=0}^\infty \lambda^k \cdot \phi(S_{t+k+1}) \;\Bigg|\; S_t = s, A_t = a\right]$$
  
 At equilibrium, $Q_I = 0$ and the policy acts as a pure cost minimiser. The agent transitions from exploration to exploitation **automatically** — no exploration schedule, no decay parameter, no external switching criterion.
  
