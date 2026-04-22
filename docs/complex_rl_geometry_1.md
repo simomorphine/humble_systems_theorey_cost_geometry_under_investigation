@@ -307,15 +307,15 @@ where $H(\Theta \mid S_t = s)$ is the conditional entropy of $\Theta$ given stat
  
 **Proposition 8.2** *(One-step imaginary utility equals mutual information).* Under Assumption 8.1:
  
-$$\mathbb{E}_{S_{t+1}}\bigl[d(s, a, S_{t+1})\bigr] = I(S_{t+1};\, \Theta \mid S_t = s, A_t = a)$$
+$$\mathbb{E}_{S_{t+1}}\bigl[d(s, a, S_{t+1})\bigr] = - I(S_{t+1};\, \Theta \mid S_t = s, A_t = a)$$
  
 *Proof.*
  
-$$\mathbb{E}_{S_{t+1}}[d(s,a,S_{t+1})] = \phi(s) - \mathbb{E}_{S_{t+1}}[\phi(S_{t+1})]$$
+$$\mathbb{E}_{S_{t+1}}[d(s,a,S_{t+1})] = - \phi(s) + \mathbb{E}_{S_{t+1}}[\phi(S_{t+1})]$$
  
-$$= H(\Theta \mid s) - \mathbb{E}_{S_{t+1}}[H(\Theta \mid S_{t+1}, s, a)]$$
+$$= - H(\Theta \mid s) + \mathbb{E}_{S_{t+1}}[H(\Theta \mid S_{t+1}, s, a)]$$
  
-$$= H(\Theta \mid s, a) - H(\Theta \mid S_{t+1}, s, a) = I(S_{t+1};\, \Theta \mid s, a) \qquad \square$$
+$$= - H(\Theta \mid s, a) + H(\Theta \mid S_{t+1}, s, a) = - I(S_{t+1};\, \Theta \mid s, a) \qquad \square$$
  
 **Corollary 8.3** *(Imaginary Q-value as discounted cumulative mutual information).* Under Assumption 8.1:
  
