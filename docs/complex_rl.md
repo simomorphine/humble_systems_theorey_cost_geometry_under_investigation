@@ -77,7 +77,7 @@ Lemma 1.2 is quietly important: our primary criterion $|\mathbb{E}[G_t]|$ is a *
 
 ### 1.2 Function Spaces
 
-Let $\mathcal{Q} = \mathcal{B}(\mathcal{S} \times \mathcal{A}, \mathbb{C})$ be the Banach space of bounded complex action-value functions with sup-norm $\|Q\|_\infty = \max_{s,a} |Q(s,a)|$.
+Let $\mathcal{Q} = \mathcal{B}(\mathcal{S} \times \mathcal{A}, \mathbb{C})$ be the Banach space of bounded complex action-value functions with sup-norm $\|Q\|_ \infty = \max_{s,a} |Q(s,a)|$.
 
 ### 1.3 Standard MDPs (Recalled)
 
