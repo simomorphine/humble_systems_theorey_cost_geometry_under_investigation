@@ -209,7 +209,7 @@ d_γ(sᵢ, sⱼ) = cost(sᵢ, sⱼ) + γ · i · debt(sᵢ, sⱼ)
 
 ## Citation / Attribution
 
-This work is developed by **Mohamed Elwardi** (HST Research Group), Casablanca, Morocco.
+This work is developed by **Mohamed Elwardi**, Casablanca, Morocco.
 
 Timestamped and copyright-registered. If you build on this, please cite appropriately and reach out — collaboration is welcome.
 
