@@ -341,7 +341,7 @@ Moreover, under Axiom 9.1 and for identifiable environments, $\mathrm{Im}(Q^*(s,
 
 > **Remark 9.3** *(Heuristic: the contraction gap at equilibrium).* The contraction gap of Section 4 arises when two complex values selected by $\arg\min |\cdot|$ point in nearly opposite directions. Proposition 9.2 places $Q^*$ in the upper half-plane. As $Q^*_I \to 0$, all values approach the positive real axis and the maximum phase difference approaches zero. This suggests the contraction gap may vanish in the neighbourhood of the fixed point that Axiom 9.1 guarantees the system is converging toward. This remains a heuristic observation, not a proof: establishing a uniform contraction bound near the fixed point requires a separate argument and is part of OP1.
 
-**Theorem 9.4** *($|Q|^ 2$ is a Lyapunov function).* Define $\mathcal{L}(s,a) = |Q^*(s,a)|^2 = Q^{*2}_R(s,a) + Q^{*2}_I(s,a)$. Then:
+**Theorem 9.4** *($|Q|^{2}$ is a Lyapunov function).* Define $\mathcal{L}(s,a) = |Q^*(s,a)|^2 = Q^{*2}_R(s,a) + Q^{*2}_I(s,a)$. Then:
 
 - $Q^*_R(s,a)$ measures distance from the cost optimum
 - $Q^*_I(s,a) \geq 0$ measures epistemic tension remaining at $(s,a)$
