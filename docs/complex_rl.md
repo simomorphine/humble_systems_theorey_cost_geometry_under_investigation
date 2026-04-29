@@ -33,7 +33,7 @@ The modulus $|z| = \sqrt{c^2 + d^2}$ is the Euclidean distance from the origin i
 | **Proven** | The Bellman *evaluation* operator is a $\lambda$-contraction with a unique fixed point |
 | **Proven** | The imaginary $Q$-value telescopes to a closed form under the potential difference assumption |
 | **Proven** | Under the HST Equilibrium Axiom, $|Q|^2$ is a Lyapunov function and the fixed point lies in the upper half-plane |
-| **Open** | The Bellman *optimality* operator is not yet proven to be a contraction |
+| **Open** | The Bellman *optimality* operator is not yet proven to be a contraction without HST Axiom |
 | **Interpretive** | The mutual information reading requires a semantic assumption, stated explicitly |
 
 All formal results in Sections 3 through 9 pertain to the modulus-of-expectation criterion $J^\pi(s) = |\mathbb{E}[G^\pi_t \mid S_t = s]|$, not the expected-modulus criterion $\tilde{J}^\pi(s) = \mathbb{E}[|G^\pi_t| \mid S_t = s]$. By Lemma 1.2, $J^\pi \leq \tilde{J}^\pi$; the expected-modulus criterion requires a distributional treatment and is an open problem.
