@@ -179,7 +179,7 @@ In $\mathbb{R}$ this holds because the real line is totally ordered. In $\mathbb
 
 ### A Partial Positive Result
 
-**Theorem 4.2** *(Scalar modulus contraction — proven).* Define $\hat{T} : \mathcal{B}(\mathcal{S}, \mathbb{R}_+) \to \mathcal{B}(\mathcal{S}, \mathbb{R}_+)$ by:
+**Theorem 4.2** *(Scalar modulus contraction — proven).* Define $$\hat{T} : \mathcal{B}(\mathcal{S}, \mathbb{R}_+) \to \mathcal{B}(\mathcal{S}, \mathbb{R}_+)$$ by:
 
 $$(\hat{T}V)(s) = \min_{a \in \mathcal{A}} \sum_{s'} p(s' \mid s, a) \Bigl[ |z(s,a,s')| + \lambda \cdot V(s') \Bigr]$$
 
