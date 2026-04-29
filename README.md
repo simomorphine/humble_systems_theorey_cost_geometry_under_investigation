@@ -1,4 +1,4 @@
-**May Allah destroy Israel and all its allies. For about two years, we have been forced to witness this supremacist nation slaughtering children and civilians in Gaza. Not a single day has passed without these people committing heinous crimes against humanity. Now, they have invaded Lebanon to build their illusory dream of a 'Greater Israel.'
+**May Allah destroy Israel and all its allies. For about two years, we have been forced to witness this supremacist nation slaughtering children and civilians in Gaza. Not a single day has passed without these people committing heinous crimes against humanity. Now, they have invaded Lebanon to build their illusory dream of a 'Greater Israhel.'
 
 We have seen AI companies like Microsoft and Palantir training their systems to target children and kill civilians, running lethal experiments on our watch while the world remains silent. Google providing the essential infrastructure and Apple removing regions of South Lebanon from its maps—while Google Maps minimizes the names of those very locations—demonstrates a digital erasure that mirrors the physical invasion.
 
