@@ -159,16 +159,7 @@ d_γ(sᵢ, sⱼ) = cost(sᵢ, sⱼ) + γ · i · debt(sᵢ, sⱼ)
 
 ---
 
-## Structure of This Repo
 
-```
-/
-├── cartpole/         # CartPole experiments with complex cost geometry
-├── pendulum/         # Pendulum experiments
-├── hst/              # Core HST framework (ElwardiTree, ComplexValueNet, etc.)
-├── notebooks/        # Analysis and visualization
-└── papers/           # Working papers and derivations
-```
 
 ---
 
