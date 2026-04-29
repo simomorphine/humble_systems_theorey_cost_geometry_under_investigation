@@ -216,12 +216,14 @@ That is enough to share it.
 
 ## Other Implementations
 
-# Tetris Game
+> Tetris Game
 [Elwardi Tetris](https://github.com/simomorphine/ELWARDI-TETRIS)
 
-# Quantum Perceptron
+> Quantum Perceptron
 [Neural IPS](https://github.com/simomorphine/neural_ips)
 
-# Probabilistic Decision Tree
+> Probabilistic Decision Tree
 [PDT](https://github.com/simomorphine/probabilistic_decision_tree)
+
+---
 *"What we pay cost for only holds meaning and moves us through states."*
