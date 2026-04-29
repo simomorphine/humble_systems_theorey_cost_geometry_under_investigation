@@ -369,7 +369,7 @@ At equilibrium, $Q_I = 0$ and the policy acts as a pure cost minimiser. The agen
 
 **(a)** Is $T$ a $\lambda$-contraction in $(\mathcal{Q}, \|\cdot\|_\infty)$ for all $\lambda \in [0,1)$?
 
-**(b)** If not, what is the effective contraction modulus $\kappa^* = \inf\{\kappa \geq 0 : \|TQ_1 - TQ_2\|_\infty \leq \kappa \|Q_1 - Q_2\|_\infty\}$? Is $\kappa^* < 1$ for some non-trivial class of cMDPs?
+**(b)** If not, what is the effective contraction modulus $\kappa^{*} = \inf\{\kappa \geq 0 : \|TQ_1 - TQ_2\|_\infty \leq \kappa \|Q_1 - Q_2\|_\infty\}$? Is $\kappa^{*} < 1$ for some non-trivial class of cMDPs?
 
 **(c)** Does there exist an alternative norm on $\mathcal{Q}$ under which $T$ is a $\lambda$-contraction?
 
