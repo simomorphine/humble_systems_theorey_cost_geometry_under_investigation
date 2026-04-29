@@ -139,7 +139,7 @@ $$\leq \lambda \sum_{s'} p(s' \mid s,a) \cdot |Q_1(s', \pi(s')) - Q_2(s', \pi(s'
 
 Banach's fixed-point theorem gives existence and uniqueness. $\square$
 
-**Corollary 3.2.** $\|Q^\pi\|_\infty \leq Z_{\max} / (1-\lambda)$.
+**Corollary 3.2.** $\|Q^\pi\|_ \infty \leq Z_{\max} / (1-\lambda)$.
 
 **Structural decomposition.** Because the evaluation equation is linear over $\mathbb{C}$, the real and imaginary parts satisfy independent Bellman equations:
 
