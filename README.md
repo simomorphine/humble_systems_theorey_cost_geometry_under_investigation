@@ -159,10 +159,6 @@ d_γ(sᵢ, sⱼ) = cost(sᵢ, sⱼ) + γ · i · debt(sᵢ, sⱼ)
 
 ---
 
-
-
----
-
 ## Status
 
 | Component | Status |
