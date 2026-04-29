@@ -165,7 +165,7 @@ where $\pi_Q(s') = \arg\min_{a'} |Q(s', a')|$.
 
 ### The Obstruction
 
-We want $\|TQ_1 - TQ_2\|_\infty \leq \lambda \cdot \|Q_1 - Q_2\|_\infty$. The proof requires:
+We want $\|TQ_1 - TQ_2\|_ \infty \leq \lambda \cdot \|Q_1 - Q_2\|_\infty$. The proof requires:
 
 $$|Q_1(s', a_1(s')) - Q_2(s', a_2(s'))| \leq \|Q_1 - Q_2\|_\infty$$
 
