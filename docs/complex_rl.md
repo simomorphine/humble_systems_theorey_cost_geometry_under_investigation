@@ -347,7 +347,7 @@ Moreover, under Axiom 9.1 and for identifiable environments, $\mathrm{Im}(Q^*(s,
 - $Q^*_I(s,a) \geq 0$ measures epistemic tension remaining at $(s,a)$
 - $\mathcal{L}(s,a)$ decomposes total tension into its cost and epistemic components
 
-Under Axiom 9.1, the epistemic component $Q^*_I \to 0$. Whether the cost component $Q^*_R$ also vanishes depends on the structure of the MDP: in a zero-cost optimal trajectory $Q^*_R$ would vanish, but in general the real part of the fixed point is the discounted accumulated real cost under the optimal policy, which need not be zero.
+Under Axiom 9.1, the epistemic component $Q^*_ I \to 0$. Whether the cost component $Q^*_ R$ also vanishes depends on the structure of the MDP: in a zero-cost optimal trajectory $Q^*_R$ would vanish, but in general the real part of the fixed point is the discounted accumulated real cost under the optimal policy, which need not be zero.
 
 **Proposition 9.5** *(Epistemic equilibrium condition).* A policy $\pi$ is in epistemic equilibrium at $(s,a)$ if and only if:
 
