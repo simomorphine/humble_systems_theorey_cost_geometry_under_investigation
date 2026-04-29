@@ -369,7 +369,7 @@ At equilibrium, $Q_I = 0$ and the policy acts as a pure cost minimiser. The agen
 
 **(a)** Is $T$ a $\lambda$-contraction in $(\mathcal{Q}, \|\cdot\|_\infty)$ for all $\lambda \in [0,1)$?
 
-**(b)** If not, what is the effective contraction modulus $\kappa^{*} = \inf\{\kappa \geq 0 : \|TQ_1 - TQ_2\|_\infty \leq \kappa \|Q_1 - Q_2\|_\infty\}$? Is $\kappa^{*} < 1$ for some non-trivial class of cMDPs?
+**(b)** If not, what is the effective contraction modulus $\kappa^{*} = \inf\{\kappa \geq 0 : \|TQ_1 - TQ_2\|_ \infty \leq \kappa \|Q_1 - Q_2\|_ \infty\}$? Is $\kappa^{*} < 1$ for some non-trivial class of cMDPs?
 
 **(c)** Does there exist an alternative norm on $\mathcal{Q}$ under which $T$ is a $\lambda$-contraction?
 
@@ -456,10 +456,6 @@ The **phase** of $Q^*(s,a)$ is the instantaneous angle between exploitation and 
 - Borkar, V. S. (2000). The ODE method for convergence of stochastic approximation and reinforcement learning. *SIAM Journal on Control and Optimization*, 38(2):447–469.
 - Borkar, V. S. (2008). *Stochastic Approximation: A Dynamical Systems View.* Cambridge University Press.
 - Cover, T. M. & Thomas, J. A. (2006). *Elements of Information Theory*, 2nd ed. Wiley.
-- Elwardi, M. (2024). Humble Systems Theory: Foundations, ComplexIPS Architecture, and Bitopological Equilibrium. *HST Working Paper.*
-- Elwardi, M. (2025). PDT-BAMDP: Probabilistic Decision Trees for Bayes-Adaptive MDPs with Selective Belief Updates. *HST Working Paper.*
-- Elwardi, M. (2026a). Complex-Valued Reinforcement Learning with Modulus Minimisation. *HST Working Paper v2.0.*
-- Elwardi, M. (2026b). Complex Bayes-Adaptive MDPs: Entropy, Mutual Information, and the HST Equilibrium Axiom. *HST Working Paper v1.0.*
 - Hayes, C. F. et al. (2022). A practical guide to multi-objective reinforcement learning and planning. *AAMAS*, 36(1):1–59.
 - Hirose, A. (2012). *Complex-Valued Neural Networks*, 2nd ed. Springer-Verlag.
 - Liu, C., Xu, X., & Hu, D. (2015). Multiobjective reinforcement learning: A comprehensive overview. *IEEE Trans. SMC*, 45(3):385–398.
