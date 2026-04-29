@@ -2,7 +2,7 @@
 
 We have seen AI companies like Microsoft and Palantir training their systems to target children and kill civilians, running lethal experiments on our watch while the world remains silent. Google providing the essential infrastructure and Apple removing regions of South Lebanon from its maps—while Google Maps minimizes the names of those very locations—demonstrates a digital erasure that mirrors the physical invasion.
 
-Humble systems theory is an act of resistance against their arrogance. We will not surrender to this satanic agenda; we will fight back against the killers of children. May God help us against these cowards before they bring about the end of humanity.**
+Humble systems theory is an act of resistance against their arrogance. We will not surrender to this satanic agenda; we will fight back against the killers of children. May Allah help us against these cowards before they bring about the end of humanity.**
 
 ---
 
