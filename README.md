@@ -165,7 +165,6 @@ d_γ(sᵢ, sⱼ) = cost(sᵢ, sⱼ) + γ · i · debt(sᵢ, sⱼ)
 |---|---|
 | Cost functions (CartPole, Pendulum) | ✅ Working hypotheses |
 | Potential / debt construction | ✅ Implemented |
-| ElwardiTree bandit search | ✅ Implemented |
 | Theoretical derivation of cost/debt | ❌ Open problem |
 | Riemannian surface connection | 🔬 Conjecture under investigation |
 | General derivation procedure | 🔬 Conjecture under investigation |
