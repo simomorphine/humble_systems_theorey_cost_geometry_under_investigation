@@ -220,7 +220,7 @@ Taking the closure of $U_{\text{pre}}$ in different topologies yields four disti
 
 $$E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$$
 
-*Proof.* Since $\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-$, a set closed in the join topology is also closed in the average topology, giving $E_{\text{avg}} \subseteq E_\vee$. Since $\tau_+ \vee \tau_-$ is coarser than both $\tau_+$ and $\tau_-$ individually, $E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$. $\square$
+*Proof.* Since $\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-$, a set closed in the join topology is also closed in the average topology, giving $E_{\text{avg}} \subseteq E_\vee$. Since $\tau_+ \vee \tau_-$ is finer than both $\tau_+$ and $\tau_-$ individually, $E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$. $\square$
 
 ### 6.4 Local Asymmetry and Symmetric Points
 
