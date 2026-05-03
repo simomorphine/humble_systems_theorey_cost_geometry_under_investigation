@@ -179,7 +179,7 @@ $$d_{\text{max}}(b, x) = \max\{d_\gamma(b, x),\ d_\gamma(x, b)\}$$
 
 **Proposition 6.4.**
 
-$d_\avg$ and $d_{\text{max}}$ are equivalent distances, and they define the same topology on $\mathcal{B}$.
+$d_\text{avg}$ and $d_{\text{max}}$ are equivalent distances, and they define the same topology on $\mathcal{B}$.
 
 *Proof.*
 
