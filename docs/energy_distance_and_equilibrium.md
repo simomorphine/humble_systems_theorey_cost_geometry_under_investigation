@@ -179,11 +179,11 @@ $$d_{\text{max}}(b, x) = \max\{d_\gamma(b, x),\ d_\gamma(x, b)\}$$
 
 **Proposition 6.4.**
 
-$d_\gamma$ and $d_{\text{max}}$ are equivalent distances, and they define the same topology on $\mathcal{B}$.
+$d_\avg$ and $d_{\text{max}}$ are equivalent distances, and they define the same topology on $\mathcal{B}$.
 
 *Proof.*
 
-$$d_\gamma \leq d_{\text{max}} \leq 2d_\gamma \qquad \square$$
+$$d_\text{avg} \leq d_{\text{max}} \leq 2d_\text{avg} \qquad \square$$
 
 **Proposition 6.5 (Intersection Property).**
 
