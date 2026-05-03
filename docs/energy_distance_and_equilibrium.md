@@ -187,7 +187,7 @@ $$d_\text{avg} \leq d_{\text{max}} \leq 2d_\text{avg} \qquad \square$$
 
 **Proposition 6.5 (Intersection Property).**
 
-$$B^+(b, \varepsilon) \cap B^-(b, \varepsilon) \subseteq B_{\text{avg}}(b, 2\varepsilon)$$
+$$B^+(b, \varepsilon) \cap B^-(b, \varepsilon) \subseteq B_{\text{avg}}(b, \varepsilon)$$
 
 Beliefs in the intersection $B^+(b, \varepsilon) \cap B^-(b, \varepsilon)$ are *bidirectionally close* — they are both reachable from $b$ and can reach $b$ with low cost. These are the beliefs in approximate equilibrium with $b$.
 
