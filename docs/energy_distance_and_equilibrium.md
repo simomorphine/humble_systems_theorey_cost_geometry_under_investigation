@@ -275,7 +275,7 @@ We have developed a unified mathematical framework extending the geometry of inf
 - A **complex quasi-metric** $Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j)$ packaging energy and debt into a single geometric object
 - A **one-parameter family** $d_\gamma$ interpolating between pure energy ($\gamma = 0$) and full energy-debt ($\gamma = 1$) geometries
 - A **bitopological space** $(\mathcal{B}, \tau_+, \tau_-)$ arising from the asymmetry of $d_\gamma$, generating a natural hierarchy of equilibrium concepts
-- A **locally symmetric point set** $\text{Sym}_\gamma(\mathcal{B})$ characterizing beliefs where the $d_\gamma$-asymmetry vanishes to first order
+- A **locally symmetric point set** $\text{Sym}_ \gamma(\mathcal{B})$ characterizing beliefs where the $d_\gamma$-asymmetry vanishes to first order
 
 The hierarchy $E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$ captures distinct meanings of balance, from perfect local symmetry ($E_{\text{avg}}$) to directional reachability ($E_\rightarrow, E_\leftarrow$). The relationship between $E_{\text{avg}}$ and $\text{Sym}_\gamma(\mathcal{B})$ remains an open question whose resolution depends on the interplay between the regularity of $\text{cost}$ and the structure of the potential $\psi$. This structure emerges naturally whenever a system optimizes simultaneously in two directions — it is not imposed, but discovered.
 
