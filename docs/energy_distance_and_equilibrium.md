@@ -165,7 +165,7 @@ A neighborhood in the join topology requires both forward and backward proximity
 
 **Definition 6.1 (Average Distance).**
 
-$$d_{\text{avg}}(b, x) = d_\gamma(b, x) + d_\gamma(x, b)$$
+$$d_{\text{avg}}(b, x) = (d_\gamma(b, x) + d_\gamma(x, b))/2$$
 
 This measures the **round-trip cost**: going from $b$ to $x$ and back.
 
