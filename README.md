@@ -217,4 +217,11 @@ That is enough to share it.
 [PDT](https://github.com/simomorphine/probabilistic_decision_tree)
 
 ---
+
+## New Work
+
+> The Cosmic Comedy
+[Cosmic Joke / Universal Truth](https://github.com/simomorphine/The-Cosmic-Comedy)
+
+---
 *"What we pay cost for only holds meaning and moves us through states."*
